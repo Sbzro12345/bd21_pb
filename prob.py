@@ -1,7 +1,7 @@
 #change arr to suit the needs
 #arr takes probabilities as percentages, and returns them in form /256
 #used to calculate required probabilities of BDv21 spawning RNG
-arr = [25,25,25,25]
+arr = [21,50,180]
 
 def prob(n):
     if n == 1:
