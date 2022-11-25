@@ -37,7 +37,8 @@ ACTOR IceImp: Imp 2315
 	DamageType "Ice"
     DamageFactor "Shrapnel", 0.3
 	+FLOORCLIP
-	-NOTARGET
+	+NOTARGET
+	+NOINFIGHTING
 	SeeSound "imp/sight"
 	PainSound "imp/pain"
 	DeathSound "imp/death"
