@@ -1,0 +1,19 @@
+//Random Monster Spawner for runs
+#include "MonsterSpawner.txt"
+
+//Archviles
+#include "ACTORS/Archviles/Archvile.dec"
+#include "ACTORS/Archviles/FleshWizard.dec"
+#include "ACTORS/Archviles/Hellion.dec"
+#include "ACTORS/Archviles/IceVile.dec"
+#include "ACTORS/Archviles/IceImp.dec"
+
+//FLOATERS
+#include "ACTORS/Floaters/Afrit.txt"
+#include "ACTORS/Floaters/InfernalCacodemon.txt"
+#include "ACTORS/Floaters/Overlord.txt"
+#include "ACTORS/Floaters/Phantasm.dec"
+#include "ACTORS/Floaters/SufferingElemental.dec"
+#include "ACTORS/Floaters/Trite.txt"
+#include "ACTORS/Floaters/TriteElemental.txt"
+#include "ACTORS/Floaters/Watcher.txt"

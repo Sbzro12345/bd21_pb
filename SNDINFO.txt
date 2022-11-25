@@ -1,0 +1,263 @@
+//Ice
+ICEBRK1 ICEBRK1
+
+$random IceBreakSmall { icebreaksmall1 icebreaksmall2 }
+icebreaksmall1	ICBRKS1
+icebreaksmall2	ICBRKS2
+
+$random IceBreakMedium { icebreakmedium1 icebreakmedium2 }
+icebreakmedium1	ICBRKM1
+icebreakmedium2	ICBRKM2
+
+$random IceBreakLarge { icebreaklarge1 icebreaklarge2 }
+icebreaklarge1	ICBRKL1
+icebreaklarge2	ICBRKL2
+
+$random IceShardBounce { iceshardbounce1 iceshardbounce2 iceshardbounce3 }
+iceshardbounce1	SHDBNC1
+iceshardbounce2	SHDBNC2
+iceshardbounce3	SHDBNC3
+
+$random IceMelt { meltingice1 meltingice2 meltingice3 }
+meltingice1	ICEMLT1
+meltingice2	ICEMLT2
+meltingice3	ICEMLT3
+
+//IMPS
+//IMP
+Afrit/CometFire FRITCMFR
+Afrit/CometHit	FRITCMHT
+Afrit/Hellfire	FRITFIRE
+Weapons/FreezerFire FREFIRE
+Weapons/FreezerRecharge FRSRLD
+weapons/cryobowflyby    FRZSTRM
+weapons/freezer/beamstop FRZPWDN
+weapons/freezer/respect1 FRZRRS1
+weapons/freezer/respect2 FRZRRS2
+weapons/freezer/respect3 FRZRRS3
+weapons/freezer/idle FRZRHUM
+weapons/freezer/fire FRZRFR1
+weapons/freezer/up FRZRUP
+weapons/freezer/reload1 FRZRRL1
+weapons/freezer/reload2 FRZRRL2
+weapons/freezer/reload3 FRZRRL3
+DSBOTTLE DSBOTTLE
+ImpFire IMPFIRE2
+$pitchshift IMPFIRE 3
+$random ImpFireImpact {BALLEXP1 BALLEXP2 BALLEXP3 BALLEXP4 }
+BALLEXP1 BALLEXP1
+BALLEXP2 BALLEXP2
+BALLEXP3 BALLEXP3
+BALLEXP4 BALLEXP4
+ImpFireLoop BALLOOP1
+$random imp/sight		{ imp/sight1  imp/sight2 imp/sight3 imp/sight4 }
+imp/sight1			imp_sig1
+imp/sight2			imp_sig2
+imp/sight3          imp_sig3
+imp/sight4          imp_sig4
+$random imp/pain { Imppain1 Imppain2 Imppain3 }
+Imppain1 IMP_P1
+Imppain2 IMP_P2
+Imppain3 IMP_P3
+$random imp/active { BREATH_1  BREATH_2 BREATH_3 }
+BREATH_1 BREATH_1
+BREATH_2 BREATH_2
+BREATH_3 BREATH_3
+$volume imp/active 0.85
+$random imp/death { IMP_DEA1 IMP_DEA2 IMP_DEA3 IMP_DEA4 }
+IMP_DEA1 IMP_DEA1
+IMP_DEA2 IMP_DEA2
+IMP_DEA3 IMP_DEA3
+IMP_DEA4 IMP_DEA4
+// Imp's Step Sounds
+$random flesh/step		{ fhstep1  fhstep2 fhstep3 fhstep4 }
+fhstep1		flesh1
+fhstep2		flesh2
+fhstep3		flesh3
+fhstep4		flesh4
+$volume flesh/step 0.7
+$limit flesh/step 12 256
+//Impse
+$random imp/melee { imp/melee1 imp/melee2 imp/melee3 } 
+imp/melee1	IMPCLAW1
+imp/melee2	IMPCLAW2
+imp/melee3	IMPCLAW3
+IMPCHARG IMPCHARG
+//DARK IMPS
+$random dimp/pain { DImppain1 DImppain2 DImppain3 }
+DImppain1 dimppn1
+DImppain2 dimppn2
+DImppain3 dimppn3
+$random dimp/active { dimpact1 dimpact2 dimpact3 }
+dimpact1 dimpact1
+dimpact2 dimpact2
+dimpact3 dimpact3
+$random dimp/death { dimpdth1 dimpdth2 dimpdth3 }
+dimpdth1 dimpdth1
+dimpdth2 dimpdth2
+dimpdth3 dimpdth3
+$random dimp/see { dimpsit1 dimpsit2 dimpsit3 }
+dimpsit1 dimpsit1
+dimpsit2 dimpsit2
+dimpsit3 dimpsit3
+DarkImpFireLoop BALLOOP2
+$random dimp/missile { dimpmis1 dimpmis2 dimpmis3 }
+dimpmis1 dimpmis1
+dimpmis2 dimpmis2
+dimpmis3 dimpmis3
+//SAVAGE IMP
+$Random SavageImp/Sight { SVIMPS1 SVIMPS2 SVIMPS3 }
+SVIMPS1		SVIMPS1
+SVIMPS2		SVIMPS2
+SVIMPS3		SVIMPS3
+SavageImp/Active SVIMPI1
+$Random SavageImp/Attack { SVIMPF1 SVIMPF2 }
+SVIMPF1		SVIMPF1
+SVIMPF2		SVIMPF2
+SavageImp/Pain SVIMPP1
+$Random SavageImp/Death { SVIMPD1 SVIMPD2 SVIMPD3 SVIMPD4 }
+SVIMPD1		SVIMPD1
+SVIMPD2		SVIMPD2
+SVIMPD3		SVIMPD3
+SVIMPD4		SVIMPD4
+$random fatso/shotx { fbx1 fbx2 fbx3 fbx4 }
+fbx1		fallexp1
+fbx2		fallexp2
+fbx3		fallexp3
+fbx4		fallexp4
+
+//ICE VILE
+icevile/see NA_TAUNT
+icevile/death NA_DEATH
+icevile/pain NA_PAIN_
+icevile/active NA_IDLE_
+
+//FLESH WIZARD
+wizard/pain                     dwizpain
+wizard/sight                    dwizact
+wizard/active                   dwizact
+wizard/death                    dwizdth 
+
+//HELLION
+$random monster/hlnsit { HLNSIT1 HLNSIT2 HLNSIT3 }
+HLNSIT1 HLNSIT1
+HLNSIT2 HLNSIT2
+HLNSIT3 HLNSIT3
+$random monster/hlnact { HLNBRT1 HLNBRT2 HLNBRT3 }
+HLNBRT1 HLNBRT1
+HLNBRT2 HLNBRT2
+HLNBRT3 HLNBRT3
+$random monster/hlnpai { HLNPAI1 HLNPAI2 HLNPAI3 }
+HLNPAI1 HLNPAI1
+HLNPAI2 HLNPAI2
+HLNPAI3 HLNPAI3
+$random monster/hlndth { HLNDTH1 HLNDTH2 HLNDTH3 HLNDTH4 }
+HLNDTH1 HLNDTH1
+HLNDTH2 HLNDTH2
+HLNDTH3 HLNDTH3
+HLNDTH4 HLNDTH4
+monster/hlnphaseout HLNTEL1
+monster/hlnphasein HLNTEL2
+
+// Archvile's Step Sounds
+VRESURR VRESURR
+$random vile/fire	{ VFIRE1  VFIRE2 VFIRE3 VFIRE4 }
+VFIRE1		VFIRE1
+VFIRE2		VFIRE2
+VFIRE3		VFIRE3
+VFIRE4		VFIRE4
+$random vile/step	{ avst1  avst2 avst3 avst4 }
+avst1		vistep1
+avst2		vistep2
+avst3		vistep3
+avst4		vistep4
+$limit vile/step 12 256
+
+//INFERNAL CACODEMON
+monster/infsit               DSINFSIT
+monster/infpai               DSINFPAI
+monster/infact               DSINFACT
+
+//New Heavy Fireball sounds
+heavyfireball/throw MACOBAL3
+$random heavyfireball/explode { MACOBAL1 MACOBAL2 }
+MACOBAL1 MACOBAL1
+MACOBAL2 MACOBAL2
+
+//WATCHER 
+monster/watsit                  dswatsit
+monster/watact                  dswatact
+monster/watpai                  dswatpai
+monster/watdth                  dswatdth
+monster/watatk                  dswatatk
+monster/wathit                  dswathit
+
+//Overlord
+weapons/devexp                dsdevexp
+weapons/devzap                dsdevzap
+monster/ovlsit                  dsovlsit
+monster/ovlact                  dsovlact
+monster/ovlpai                  dsovlpai
+monster/ovldth                  dsovldth
+monster/hadsit                dshadsit
+monster/haddth                dshaddth
+monster/hadexp                dshadexp
+monster/hadtel                dshadtel
+monster/hadwlk                dshadwlk
+monster/heltel                  dsheltel
+caco/melee                    dsdembit
+weapons/gntidl                dsgntidl
+weapons/chaofi                dschaofi
+weapons/shock                 dsshock
+
+//TRITE
+$Random Trite/Sight { TRITSIG1 TRITSIG2 TRITSIG3 }
+TRITSIG1		TRITSIG1
+TRITSIG2		TRITSIG2
+TRITSIG3		TRITSIG3
+TRITSIG4		TRITSIG4
+$Random Trite/Active { TRITACT1 TRITACT2 TRITACT3 }
+TRITACT1		TRITACT1
+TRITACT2		TRITACT2
+TRITACT3		TRITACT3
+$Random Trite/Attack { TRITATT1 TRITATT2 TRITATT3 }
+TRITATT1		TRITATT1
+TRITATT2		TRITATT2
+TRITATT3		TRITATT3
+$Random Trite/MeleeHit { TRITHIT1 TRITHIT2 }
+TRITHIT1		TRITHIT1
+TRITHIT2		TRITHIT2
+$Random Trite/Step { TRITSTE1 TRITSTE2 TRITSTE3 TRITSTE4 }
+TRITSTE1		TRITSTE1
+TRITSTE2		TRITSTE2
+TRITSTE3		TRITSTE3
+TRITSTE4		TRITSTE4
+$limit Trite/Step 14 256
+Trite/WebStart		TRITWEB1
+Trite/WebEnd		TRITWEB2
+$Random Trite/Pain { TRITPAI1 TRITPAI2 TRITPAI3 }
+TRITPAI1		TRITPAI1
+TRITPAI2		TRITPAI2
+TRITPAI3		TRITPAI3
+$Random Trite/Death { TRITDEA1 TRITDEA2 TRITDEA3 }
+TRITDEA1		TRITDEA1
+TRITDEA2		TRITDEA2
+TRITDEA3		TRITDEA3
+$Random Trite/Splat { TRITSPL1 TRITSPL2 }
+TRITSPL1		TRITSPL1
+TRITSPL2		TRITSPL2
+
+$Volume Trite/Sight 0.5
+$Volume Trite/Active 0.5
+$Volume Trite/Attack 0.5
+$Volume Trite/MeleeHit 0.5
+$Volume Trite/Pain 0.5
+$Volume Trite/Death 0.5
+$Volume Trite/Splat 0.5
+$Volume Trite/Step 0.2
+
+//Phantasm
+phantasm/attack SKL2ATK
+phantasm/death FIRXPL2
+phantasm/pain DM2PAIN
+phantasm/explode BAREXP2
