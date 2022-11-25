@@ -606,7 +606,8 @@ States
 		TNT1 A 0
 		TNT1 A 1
 		TNT1 A 0 A_Jump(84, "Daedabus")		
-		TNT1 A 0 A_Jump(126, "Volcabus")  
+		TNT1 A 0 A_Jump(126, "Volcabus")
+		TNT1 A 0 A_Jump(256, "Mancubus")
 
 	Mancubus:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -620,7 +621,7 @@ States
 		TNT1 A 0 A_SpawnItemEx ("Volcabus",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
 		Stop	
 
-Daedabus:
+	Daedabus:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_SpawnItemEx ("Daedabus",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)

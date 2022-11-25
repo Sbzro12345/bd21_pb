@@ -1,5 +1,5 @@
-//Random Monster Spawner for runs
-#include "MonsterSpawner.txt"
+//Mancubi
+#include "ACTORS/Mancubi/Daedabus.dec"
 
 //Archviles
 #include "ACTORS/Archviles/Archvile.dec"
@@ -17,3 +17,6 @@
 #include "ACTORS/Floaters/Trite.txt"
 #include "ACTORS/Floaters/TriteElemental.txt"
 #include "ACTORS/Floaters/Watcher.txt"
+
+//Random Monster Spawner for runs
+#include "MonsterSpawner.txt"
