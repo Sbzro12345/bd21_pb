@@ -198,9 +198,9 @@ ACTOR Icevile Replaces Archvile 2310
 		DIAF JKLMN 2 BRIGHT A_FaceTarget 
 		CYUS F 0 A_PlaySound("Weapons/FreezerFire")
 		TNT1 A 0 A_SpawnItem("HeadshotTarget8b",5, 54,0)
-		DIAF O 2 BRIGHT A_CustomMissile("VileFreezer", 40, 30, random(-15,15), CMF_OFFSETPITCH, random(0,15))
-		TNT1 A 0 BRIGHT A_CustomMissile("VileFreezer", 30, 35, random(-15,15), CMF_OFFSETPITCH, random(0,15))
-		TNT1 A 0 BRIGHT A_CustomMissile("VileFreezer", 30, 30, random(-15,15), CMF_OFFSETPITCH, random(0,15))
+		DIAF O 2 BRIGHT A_CustomMissile("VileFreezer", 40, 30, random(0,15), CMF_OFFSETPITCH, random(0,15))
+		TNT1 A 0 BRIGHT A_CustomMissile("VileFreezer", 30, 35, random(0,15), CMF_OFFSETPITCH, random(0,15))
+		TNT1 A 0 BRIGHT A_CustomMissile("VileFreezer", 30, 30, random(0,15), CMF_OFFSETPITCH, random(0,15))
 		TNT1 A 0 A_SpawnItem("HeadshotTarget8b",5, 54,0)
 		DIAF P 2 BRIGHT
 		Goto See
