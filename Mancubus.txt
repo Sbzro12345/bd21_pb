@@ -21,7 +21,7 @@ ACTOR Mancubus : Fatso Replaces Fatso
 	Radius 24
 	Height 60
     GibHealth 30
-    Health 600
+    Health 650
 	Mass 1000
 	Speed 8
 	FAstSpeed 12

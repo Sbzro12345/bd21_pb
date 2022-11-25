@@ -11,7 +11,7 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 	Height 56
 	Mass 400
 	Speed 10
-	Health 400
+	Health 320
 	PainChance 128
 	PainChance "Kick", 255
 	PainChance "Avoid", 90

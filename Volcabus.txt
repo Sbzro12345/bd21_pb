@@ -1,7 +1,7 @@
 Actor Volcabus : Mancubus
 {
 	//$category "BD Monsters"
-	Health 1400
+	Health 1050
 	Scale 1.5
 	//SpriteW(88x150%=132)
 	//SpriteH(67x150%=101)

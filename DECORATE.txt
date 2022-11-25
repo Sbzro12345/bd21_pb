@@ -1,3 +1,7 @@
+//Arachnotrons
+#include "ACTORS/Arachnotrons/Arachnophyte.dec"
+#include "ACTORS/Arachnotrons/InfernalArachnotron.dec"
+
 //Mancubi
 #include "ACTORS/Mancubi/Daedabus.dec"
 

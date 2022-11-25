@@ -731,8 +731,7 @@ States
 		TNT1 A 1
 		TNT1 A 0 A_Jump(64, "Arachnophyte")
 		TNT1 A 0 A_Jump(85, "Arachnotron1")
-		TNT1 A 0 A_Jump(128, "InfernalArachnotron")
-		TNT1 A 0 A_Jump(256, "Arachnotron2")
+		TNT1 A 0 A_Jump(128, "Arachnotron2")
 
 	Arachnotron1:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -740,12 +739,6 @@ States
 		TNT1 A 0 A_SpawnItemEx ("Arachnotron1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
 		Stop
 
-	InfernalArachnotron:
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx ("InfernalArachnotron",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
-		Stop
-	
 	Arachnotron2:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
