@@ -1,6 +1,3 @@
-//Random Monster Spawner for runs
-#include "MonsterSpawner.txt"
-
 //Archviles
 #include "ACTORS/Archviles/Archvile.dec"
 #include "ACTORS/Archviles/FleshWizard.dec"
@@ -17,3 +14,7 @@
 #include "ACTORS/Floaters/Trite.txt"
 #include "ACTORS/Floaters/TriteElemental.txt"
 #include "ACTORS/Floaters/Watcher.txt"
+
+//Random Monster Spawner for runs
+#include "MonsterSpawner.txt"
+
