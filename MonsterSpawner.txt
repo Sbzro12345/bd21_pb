@@ -290,10 +290,8 @@ States
 	Spawn:
 		TNT1 A 0
 		TNT1 A 1
-		
-		TNT1 A 0 A_Jump(51, "ImpureElemental")
-	        TNT1 A 0 A_Jump(48, "Afrit")
-		TNT1 A 0 A_Jump(118, "InfernalCacodemon")
+	        TNT1 A 0 A_Jump(51, "Afrit")
+		TNT1 A 0 A_Jump(128, "InfernalCacodemon")
 		TNT1 A 0 A_Jump(256, "Cacodemon")
 		
 
@@ -315,12 +313,6 @@ States
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_SpawnItemEx ("InfernalCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
-		Stop
-
-	ImpureElemental:
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx ("ImpureElemental",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
 		Stop
 
 
@@ -689,9 +681,10 @@ States
 	Spawn:
 		TNT1 A 0
 		TNT1 A 1
-		TNT1 A 0 A_Jump(51, "SufferingElemental")
-		TNT1 A 0 A_Jump(80, "TriteElemental")
-		TNT1 A 0 A_Jump(46, "Overlord")
+		TNT1 A 0 A_Jump(26, "Overlord")
+		TNT1 A 0 A_Jump(85, "SufferingElemental")
+		TNT1 A 0 A_Jump(128, "TriteElemental")
+		TNT1 A 0 A_Jump(256, "PainElemental1")
 
 
 	PainElemental1:
@@ -731,7 +724,8 @@ States
 		TNT1 A 1
 		TNT1 A 0 A_Jump(64, "Arachnophyte")
 		TNT1 A 0 A_Jump(85, "Arachnotron1")
-		TNT1 A 0 A_Jump(128, "Arachnotron2")
+		TNT1 A 0 A_Jump(128, "InfernalArachnotron")
+		TNT1 A 0 A_Jump(256, "Arachnotron2")
 
 	Arachnotron1:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -739,6 +733,12 @@ States
 		TNT1 A 0 A_SpawnItemEx ("Arachnotron1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
 		Stop
 
+	InfernalArachnotron:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_SpawnItemEx ("InfernalArachnotron",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
+		Stop
+	
 	Arachnotron2:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
@@ -762,9 +762,9 @@ States
 	 Spawn:
 		TNT1 A 0
 		TNT1 A 1
-		TNT1 A 0 A_Jump(64, "Hellion")
-		TNT1 A 0 A_Jump(85, "Icevile")
-		TNT1 A 0 A_Jump(63, "FleshWizard")
+		TNT1 A 0 A_Jump(30, "FleshWizard")
+		TNT1 A 0 A_Jump(85, "Hellion")
+		TNT1 A 0 A_Jump(128, "Icevile")
 		TNT1 A 0 A_Jump(256, "PB_Archvile")	
 
 	PB_Archvile:
