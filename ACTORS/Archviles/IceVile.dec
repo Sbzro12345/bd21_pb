@@ -733,7 +733,7 @@ ACTOR VileFreezer: Plasma_ball
 	Radius 8
 	Height 8
 	Speed 20
-	Damage 3
+	Damage 4
     DamageType "Freeze"
 	Decal "Scorch"
 	Projectile
@@ -784,7 +784,7 @@ ACTOR MiniVileFreezer: VileFreezer
 	Radius 10
 	Height 10
 	Speed 27
-	Damage 2
+	Damage 3
 	Scale 0.19
 	-SEEKERMISSILE
 }
@@ -811,7 +811,7 @@ Actor IceImpComet
   Radius 6
   Height 8
   Speed 5
-  Damage 5
+  Damage 8
   DamageType "Ice"
   Scale 1.5
   Projectile
