@@ -16,7 +16,7 @@ actor KnightSlam
 
 ACTOR PB_Knight : HellKnight Replaces HellKnight 2210
 {
-	Tag "Hell Knight"
+	//$Title Hell Knight
 	//$Category Project Brutality - Monsters/Hell Nobles
 	//$Sprite BOS2B1D1
     Scale 1.0

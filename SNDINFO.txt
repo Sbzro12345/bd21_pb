@@ -140,7 +140,17 @@ superbaron/spike BRUSPOL
 superbaron/pound BRUSBOM
 superbaron/smash BRUSMAS
 DSTELEPT DSTELEPT
+
 //CYBER NOBLES
+cknight/chagun/start CG_WINDU
+$random Weapons/NailMGFire	{ Nailfire1 Nailfire2 Nailfire3 }
+Nailfire1 Nailfr1
+Nailfire2 Nailfr2
+Nailfire3 Nailfr3
+Weapons/NailHit		NAILHIT
+Weapons/NailHitBleed	NAILHTD
+Weapons/NailFlight	NAILFLY
+$rolloff Weapons/NailFlight 500 800 
 cbaron/sight	 cbarnsit
 cbaron/pain		 cbarnpai
 cbaron/death	 cbarndth
@@ -160,6 +170,7 @@ DSBRUWK3 DSBRUWK3
 DSBRUWK4 DSBRUWK4
 DSBRUWK5 DSBRUWK5
 monster/brufir dsbrufir
+
 // Hell Knight's Step Sounds
 $random knight/step		{ hkst1  hkst2 hkst3 hkst4 }
 hkst1		hkstep1
@@ -169,6 +180,7 @@ hkst4		hkstep4
 $volume knight/step 1.0
 $limit knight/step 12 256
 $rolloff knight/step linear 350 1350
+
 //PALADIN
 Paladin/Sight	HPALSIT
 Paladin/Active	HPALACT

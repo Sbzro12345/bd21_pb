@@ -1,4 +1,7 @@
 //Nobles
+#include "ACTORS/Nobles/Knight.dec"
+#include "ACTORS/Nobles/DyingHellKnight.dec"
+#include "ACTORS/Nobles/CyberKnight.dec"
 #include "ACTORS/Nobles/CyberPaladin.txt"
 
 //Arachnotrons
