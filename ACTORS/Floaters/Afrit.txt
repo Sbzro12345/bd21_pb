@@ -29,7 +29,7 @@ Actor Afrit replaces Cacodemon
   Obituary "%o was scorched by an Afrit"
   HitObituary "%o found the Afrit too hot to handle."
   Tag "Cacodemon"
-  Species "Cacodemon"
+  Species "FlyingBalls"
   Damagefactor "HellFire", 0.0
  	damagefactor "Fatality", 0.5
 	DamageFactor "Blood", 0.0 DamageFactor "BlueBlood", 0.0 DamageFactor "GreenBlood", 0.0

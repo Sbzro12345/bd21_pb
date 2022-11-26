@@ -5,6 +5,7 @@ ACTOR Watcher replaces Cacodemon
 	//$Category Project Brutality - Monsters/Flyers
 	//$Sprite WATCA1
 Tag "Watcher"
+Species "FlyingBalls"
 Health 100
 Radius 24 
 Height 40 

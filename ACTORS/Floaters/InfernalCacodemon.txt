@@ -46,7 +46,7 @@ ACTOR InfernalCacodemon replaces Cacodemon
 	DropItem "Demonpickup2" 65
 	DropItem "Demonpickup" 255
 	
-	Species "Cacodemon"	
+	Species "FlyingBalls"	
 	+FIRERESIST
 	+DONTHURTSPECIES
 	+DONTHARMSPECIES
