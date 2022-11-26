@@ -4,7 +4,7 @@ ACTOR SKSavageImp : Inventory
 Inventory.MaxAmount 1
 }
 
-ACTOR PB_InfectedImp: PB_Imp Replaces DoomImp
+ACTOR InfectedImp: Imp Replaces DoomImp
 //ACTOR Imp Replaces DoomImp
 {
 	//$Title Savage Imp
@@ -2289,7 +2289,7 @@ Actor DeadSavageImp_2RO4E: DeadSavageImp1
 Stop}}
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_SavageImp : PB_InfectedImp
+Actor Vanilla_SavageImp : InfectedImp
 {
 	DropItem "DemonStrengthRune" 1
 	States

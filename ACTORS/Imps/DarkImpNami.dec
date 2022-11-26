@@ -1,4 +1,4 @@
-actor PB_DarkImpNami : PB_Monster Replaces DoomImp
+actor DarkImpNami : Monster Replaces DoomImp
 {
 	//$Title Dark Imp Nami
 	//$Category Project Brutality - Monsters/Imps
@@ -1184,7 +1184,7 @@ actor DarkSeeker
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_NamiDarkImp : PB_DarkImpNami
+Actor Vanilla_NamiDarkImp : DarkImpNami
 {
 	DropItem "DemonStrengthRune" 1
 	States

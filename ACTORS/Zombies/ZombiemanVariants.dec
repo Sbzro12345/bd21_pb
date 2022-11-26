@@ -1,4 +1,4 @@
-ACTOR PB_PistolZombieman : PB_PistolZombieman1 Replaces ZombieMan
+ACTOR PistolZombieman : PistolZombieman1 Replaces ZombieMan
 {
 	SpawnID 1120
 }
@@ -238,7 +238,7 @@ Actor DeadHelmetZombiemanLikeInActionMovie: DeadZombieman1
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_PistolZombieman : PB_PistolZombieman 
+Actor Vanilla_PistolZombieman : PistolZombieman 
 {
 	DropItem "DropedPistol" 256
 	DropItem "DropedGrenade" 5
@@ -255,7 +255,7 @@ Actor Vanilla_PistolZombieman : PB_PistolZombieman
 	}
 }
 
-Actor Vanilla_PistolZombieman2 : PB_HelmetPistolZombieman
+Actor Vanilla_PistolZombieman2 : HelmetPistolZombieman
 {
 	DropItem "DropedPistol" 256
 	DropItem "DropedGrenade" 5

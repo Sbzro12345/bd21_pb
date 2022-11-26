@@ -14,7 +14,7 @@ Actor IsProning : Inventory
 inventory.maxamount 1
 }
 
-ACTOR PB_Sergeant: PB_ShotgunGuy Replaces ShotgunGuy
+ACTOR Sergeant: ShotgunGuy Replaces ShotgunGuy
 {
 	SpawnID 1200
 }
@@ -61,7 +61,7 @@ States
 	Raise:
 		SPOS K 1
 		SPOS JIH 1
-        TNT1 A 0 A_SpawnItem ("PB_Sergeant", 3)
+        TNT1 A 0 A_SpawnItem ("Sergeant", 3)
 		Stop
     Death:
 		TNT1 A 0 A_CustomMissile ("XDeathSargeLeg1", 5, 0, random (0, 360), 2, random (0, 160))
@@ -375,7 +375,7 @@ States
 	Raise:
 		FID2 E 1
 		FID2 DCB 1
-        TNT1 A 0 A_SpawnItem ("PB_Sergeant", 3)
+        TNT1 A 0 A_SpawnItem ("Sergeant", 3)
 		Stop
     Death:
 		TNT1 A 0 A_CustomMissile ("XDeathSargeLeg1", 5, 0, random (0, 360), 2, random (0, 160))
@@ -1004,7 +1004,7 @@ States{Spawn:
 }}
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_Shotgunguy1 : PB_Sergeant
+Actor Vanilla_Shotgunguy1 : Sergeant
 {
 	DropItem "DropedShotgun" 256
 	DropItem "DropedGrenade" 6

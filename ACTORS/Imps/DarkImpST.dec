@@ -1,4 +1,4 @@
-actor PB_DarkImpST : PB_Monster Replaces DoomImp
+actor DarkImpST : Monster Replaces DoomImp
 {
 	//$Title Dark Imp ST
 	//$Category Project Brutality - Monsters/Imps
@@ -1198,7 +1198,7 @@ actor DarkFast
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_STDarkImp : PB_DarkImpST
+Actor Vanilla_STDarkImp : DarkImpST
 {
 	DropItem "DemonStrengthRune" 1
 	States

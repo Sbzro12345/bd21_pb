@@ -102,7 +102,7 @@ ACTOR MonsterTargetCheckFaster: FastProjectile
 	}
 }
 
-ACTOR PB_Imp: PB_Monster Replaces DoomImp
+ACTOR Imp: Monster Replaces DoomImp
 //ACTOR Imp Replaces DoomImp
 {
 	//$Title Imp
@@ -3497,7 +3497,7 @@ Actor PinnedImpTorso_Hanging: ZombiemanTorso
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_Imp : PB_Imp
+Actor Vanilla_Imp : Imp
 {
 	States
 	{

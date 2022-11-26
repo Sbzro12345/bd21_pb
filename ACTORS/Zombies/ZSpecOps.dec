@@ -1,4 +1,4 @@
-Actor PB_ZSpecOps : PB_QSGZombie Replaces ChaingunGuy
+Actor ZSpecOps : QSGZombie Replaces ChaingunGuy
 {
 	//$Title ZSpec Ops Commando
 	//$Category Project Brutality - Monsters/Former Humans/Commandos
@@ -2179,7 +2179,7 @@ States{Spawn:
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_ZSpec : PB_ZSpecOps
+Actor Vanilla_ZSpec : ZSpecOps
 {
 	DropItem "NewClip" 256
 	DropItem "Shell" 256

@@ -3,7 +3,8 @@
 // Chaingunner
 //
 //===========================================================================
-ACTOR PB_ClassicCommando: PB_Commando Replaces ChaingunGuy
+ACTOR ClassicCommando: Commando Replaces ChaingunGuy
+ACTOR ClassicCommando: Commando Replaces ChaingunGuy
 {
 	//$Title Classic Commando
 	//$Category Project Brutality - Monsters/Former Humans/Commandos
@@ -1000,7 +1001,7 @@ Actor DeadChaingunGuy2: DeadChaingunGuy1
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_ClassicCommando : PB_Commando
+Actor Vanilla_ClassicCommando : Commando
 {
 	DropItem "DropedMinigun" 256
 	DropItem "DropedGrenade" 5

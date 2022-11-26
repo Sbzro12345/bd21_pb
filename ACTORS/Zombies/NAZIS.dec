@@ -1,4 +1,4 @@
-ACTOR PB_Nazi : PB_Monster
+ACTOR Nazi : Monster
 {
 	//$Title Nazi Soldier
 	//$Category Project Brutality - Monsters

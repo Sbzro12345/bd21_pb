@@ -1,4 +1,4 @@
-ACTOR PB_ZombieLabguy  : PB_ZombieScientist replaces ZombieMan //10828
+ACTOR ZombieLabguy  : ZombieScientist replaces ZombieMan //10828
 {
 	SpawnID 1150	
 }

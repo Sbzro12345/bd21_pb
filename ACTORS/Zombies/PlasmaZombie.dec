@@ -1,4 +1,4 @@
-ACTOR PB_PlasmaTrooper  : PB_PlasmaZombie Replaces Zombieman
+ACTOR PlasmaTrooper  : PlasmaZombie Replaces Zombieman
 {}
 
 Actor DeadPlasmaZombie_Half: ZombieManTorso

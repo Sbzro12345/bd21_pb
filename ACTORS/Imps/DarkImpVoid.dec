@@ -1,4 +1,4 @@
-actor PB_DarkImpVoid : PB_Monster Replaces DoomImp
+actor DarkImpVoid : Monster Replaces DoomImp
 {
 	//$Title Dark Imp Void
 	//$Category Project Brutality - Monsters/Imps
@@ -1290,7 +1290,7 @@ actor DarkTail
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_VoidDarkImp : PB_DarkImpVoid
+Actor Vanilla_VoidDarkImp : DarkImpVoid
 {
 	DropItem "DemonStrengthRune" 1
 	States

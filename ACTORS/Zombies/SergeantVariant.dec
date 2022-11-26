@@ -64,17 +64,17 @@ ACTOR RiotShieldDrop
 	}
 }
 
-ACTOR RiotShieldGuy : PB_RiotShieldGuy Replaces ShotgunGuy
+ACTOR RiotShieldGuy : RiotShieldGuy Replaces ShotgunGuy
 {
 	SpawnID 1220
 }
 
-ACTOR PB_HelmetSergeant : PB_ShotgunGuyHelmet Replaces ShotgunGuy
+ACTOR HelmetSergeant : ShotgunGuyHelmet Replaces ShotgunGuy
 {
 	SpawnID 1210
 }
 
-Actor PyroSergeant: PB_HelmetSergeant replaces ShotgunGuy
+Actor PyroSergeant: HelmetSergeant replaces ShotgunGuy
 {
 	SpawnID 1250
 	Scale 1.04
@@ -1422,7 +1422,7 @@ Actor Vanilla_PyroSergeant : PyroSergeant
 	}
 }
 
-Actor Vanilla_Shotgunguy2 : PB_HelmetSergeant
+Actor Vanilla_Shotgunguy2 : HelmetSergeant
 {
 	DropItem "DropedShotgun"
 	DropItem "DropedGrenade" 6
