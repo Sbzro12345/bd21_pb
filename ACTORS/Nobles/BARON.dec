@@ -1444,7 +1444,7 @@ ACTOR BaronAttack: BaronBall
     +THRUGHOST
 	RenderStyle Add
 	Alpha 0.6
-    Damage 16
+    Damage 18
     Speed 28
 	//HitObituary "$OB_IMPHIT"
 	SeeSound "none"
@@ -1487,7 +1487,7 @@ ACTOR BaronBarrelCall: BaronBall
     +THRUGHOST
 	RenderStyle Add
 	Alpha 0.6
-    Damage (random (2, 3))
+    Damage (random (3, 4))
     Speed 32
 	SeeSound "none"
 	DeathSound "none"

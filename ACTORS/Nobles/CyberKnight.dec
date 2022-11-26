@@ -1174,7 +1174,7 @@ ACTOR CyberKnightMissile
 	Height 4
 	Speed 32
 	FastSpeed 32
-	Damage 0
+	Damage 23
 	PROJECTILE
 	Scale 0.75
     damagetype "ExplosiveImpact"
@@ -1214,7 +1214,7 @@ ACTOR CyberKnightFreezer: EnemyPlasmaBall
 	Radius 10
 	Height 10
 	Speed 32
-	Damage 5
+	Damage 6
     DamageType Freeze
 	Decal "FreezerBurn"
 	Projectile
@@ -1259,7 +1259,7 @@ Actor EnemyNail
   Radius 2
   Height 2
   Speed 40
-  Damage 2
+  Damage 3
   Damagetype "Nailgun"
   Scale 0.7
   +BloodSplatter

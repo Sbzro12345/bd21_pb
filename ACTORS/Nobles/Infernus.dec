@@ -779,7 +779,7 @@ Actor BruiserBall
 	+RANDOMIZE
 	+FORCEXYBILLBOARD
     +THRUGHOST
-    Damage (random(25,35))
+    Damage (random(35,45))
 	//RenderStyle Add
 	//Alpha 0.1
 	Scale 0.95
@@ -842,7 +842,7 @@ Actor BruiserBallBig:BruiserBall
 	Height 18
 	Speed 24
 	FastSpeed 25
-    Damage (random(40,45))
+    Damage (random(50,60))
 	Scale 1.35
 	DeathSound "belphegor/missile"
   States
@@ -916,7 +916,7 @@ Actor BruiserSpikeSpawner
   Radius 8
   Height 8
   Speed 12
-  Damage 0
+  Damage 15
   +Ripper
   +FloorHugger
   +BloodlessImpact
@@ -959,7 +959,7 @@ Actor BruiserFire
   Radius 1
   Height 1
   Speed 0
-  Damage 20
+  Damage 25
   Projectile
   RenderStyle Add
   Alpha 0.9

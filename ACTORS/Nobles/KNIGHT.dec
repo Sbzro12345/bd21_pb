@@ -1069,7 +1069,7 @@ ACTOR GreenPlasmaBall: BaronBall Replaces BaronBall
 	+RANDOMIZE
 	+FORCEXYBILLBOARD
     +THRUGHOST
-    Damage (random(25,35))
+    Damage (random(35,45))
 	RenderStyle Add
 	//Alpha 1
 	Scale 0.29
@@ -1126,7 +1126,7 @@ ACTOR KnightAttack: BaronBall
     +THRUGHOST
 	RenderStyle Add
 	Alpha 0.6
-    Damage 10
+    Damage 35
     Speed 42
 	//HitObituary "$OB_IMPHIT"
 	SeeSound "none"
