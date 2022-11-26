@@ -1,4 +1,12 @@
-//Nobles
+//Barons
+#include "ACTORS/Nobles/Baron.dec"
+#include "ACTORS/Nobles/DyingBaron.dec"
+#include "ACTORS/Nobles/Infernus.dec"
+#include "ACTORS/Nobles/DyingBruiser.dec"
+#include "ACTORS/Nobles/Belphegor.dec"
+#include "ACTORS/Nobles/CyberBaron.dec"
+
+//HellKnights
 #include "ACTORS/Nobles/Knight.dec"
 #include "ACTORS/Nobles/DyingHellKnight.dec"
 #include "ACTORS/Nobles/CyberKnight.dec"
