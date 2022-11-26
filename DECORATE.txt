@@ -25,9 +25,9 @@
 #include "ACTORS/Floaters/TriteElemental.txt"
 #include "ACTORS/Floaters/Watcher.txt"
 
-#include "ACTORS/realm667monsters.dec"
-#include "ACTORS/StealthMonsters.dec"
-#include "ACTORS/UnderwaterMonsters.dec"
+//#include "ACTORS/realm667monsters.dec"
+//#include "ACTORS/StealthMonsters.dec"
+//#include "ACTORS/UnderwaterMonsters.dec"
 
 //Random Monster Spawner for runs
 #include "MonsterSpawner.txt"

@@ -3,7 +3,7 @@ ACTOR CyberPaladin replaces HellKnight
 	Tag "Cyber Paladin"
 	Health 850
 	Radius 24
-	Height 56
+	Height 60
 	Mass 800 
 	Speed 8
 	PainChance 80
@@ -11,9 +11,10 @@ ACTOR CyberPaladin replaces HellKnight
 	Monster
 	+FloorClip
 	+AvoidMelee
-	+DOHARMSPECIES
+	+DONTHURTSPECIES
+	+DONTHARMSPECIES
 	+QuickToRetaliate
-Species "CyberPaladin"
+	Species "Noble"
 	
 	damagefactor "Crush", 10.0
 	damagefactor "GibRemoving", 0.0
@@ -25,7 +26,6 @@ Species "CyberPaladin"
 	PainChance 25
 	PainChance "Saw", 100
 	PainChance "Cut", 100
-	Damagefactor "Head", 2.0
 	DamageFactor "CauseObjectsToSplash", 0.0
 	damagefactor "SSG", 0.5
 	damagefactor "Avoid", 0.0
@@ -64,43 +64,46 @@ Species "CyberPaladin"
 		
 	
 	Spawn:
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL AB 10 A_Look 
 		Goto Stand
 	
 	Stand:
 		TNT1 A 0
 		TNT1 A 0 A_CheckSight("Stand2")
-		HPAL A 0 A_SpawnItem("HeadshotTarget50", 0, 63,0)
+		HPAL A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL BBBBBBBBBB 5 A_Look
 		Loop
 		
 	Stand2:
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL B 11 A_Look
 		Goto Stand
 	See:
        TNT1 A 0 A_UnSetInvulnerable
 	   TNT1 A 0 A_ChangeFlag("FRIGHTENED", 0)
 	   TNT1 A 0 A_JumpIfCloser(128, "SeePanic")
-	TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+	TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
        HPAL AABB 3 A_Chase
 	   TNT1 A 0 A_PlaySound("Paladin/Step")
-	TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+	TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 	   HPAL CCDD 3 A_Chase
 	   TNT1 A 0 A_PlaySound("Paladin/Step")
 	   Goto See+1
 	SeeShield:
-	TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+	TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
        HPAL EEFF 4 A_Chase
 	   TNT1 A 0 A_PlaySound("Paladin/Step")
-	TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+	TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 	   HPAL GGHH 4 A_Chase
 	   TNT1 A 0 A_PlaySound("Paladin/Step")
 	   TNT1 A 0 A_Jump (96, "See")
 	   Goto SeeShield
 	SeePanic: //Try to get some distance if the target is too close
 		TNT1 A 0 A_ChangeFlag("FRIGHTENED", 1)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL AABBCCDD 3 A_Chase
 		TNT1 A 0 A_JumpIfCloser(128, "SeePanic")
 		TNT1 A 0 A_ChangeFlag("FRIGHTENED", 0)
@@ -108,7 +111,7 @@ Species "CyberPaladin"
 	Melee:
 		TNT1 A 0 A_UnSetInvulnerable
 		TNT1 A 0 A_ChangeFlag("FRIGHTENED", 0)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL MN 6 A_FaceTarget
 		TNT1 A 0 A_SetInvulnerable
 		HPAL MN 6 A_FaceTarget
@@ -137,23 +140,23 @@ Species "CyberPaladin"
 		Goto See
 	Missile1: //Grenade used if target is within 768 map units
 		TNT1 A 0 A_Jump(32, "Missile2")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL I 5 A_FaceTarget
 		TNT1 A 0 A_JumpIfCloser(384, "MissileLow")	//Don't lob the grenade if closer
 		HPAL I 5 A_FaceTarget						//than 384 map units
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL J 4 Bright A_CustomMissile("PaladinGrenade", 24, 16, 0, CMF_OFFSETPITCH, 8)
 		HPAL J 4 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL II 5 A_FaceTarget
 		Goto See
 	MissileLow: //Low lob grenade for close targets
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL I 5 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL J 4 Bright A_CustomMissile("PaladinGrenade", 24, 16, 0)
 		HPAL J 4 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL II 5 A_FaceTarget
 		Goto See
 	Missile2: //Use shield attack anyway
@@ -173,7 +176,7 @@ Species "CyberPaladin"
 		Goto See
 	Pain:
 		TNT1 A 0 A_ChangeFlag("FRIGHTENED", 0)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 12, 56,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetPaladin", 0, 60,0)
 		HPAL P 2
 		TNT1 A 0 A_JumpIfCloser (512, "ClosePain")
 		HPAL P 2 A_Pain
@@ -589,6 +592,13 @@ Actor Vanilla_CyberPaladin : CyberPaladin
 
 ACTOR HellWarrior: CyberPaladin 
 {}
+
+actor HeadshotTargetPaladin: HeadshotTarget200
+{
+Radius 11
+Height 18
++DONTRIP
+}
 
 Actor FatalizedCyberPaladin: DeadKnight
 {States{Spawn:
