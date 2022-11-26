@@ -1,4 +1,4 @@
-Actor PB_Infernus : PB_Baron replaces BaronOfHell
+Actor Infernus : Baron replaces BaronOfHell
 {
 	//$Title Infernus
 	//$Category Project Brutality - Monsters/Hell Nobles
@@ -1165,7 +1165,7 @@ Actor DeadBruiserSawedDown: DeadBruiser1
 {States{Spawn:        BT05 D -1        
 Stop}}
 //Vanilla
-Actor Vanilla_Infernus : PB_Infernus Replaces BaronofHell
+Actor Vanilla_Infernus : Infernus Replaces BaronofHell
 {
 	DropItem "DemonStrengthRune" 12
 	States
@@ -1185,8 +1185,8 @@ Actor Vanilla_Infernus : PB_Infernus Replaces BaronofHell
 }
 
 
-Actor BruiserDemon : PB_Infernus
+Actor BruiserDemon : Infernus
 {}
 
-Actor LordofHeresy : PB_Infernus
+Actor LordofHeresy : Infernus
 {}

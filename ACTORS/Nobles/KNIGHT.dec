@@ -14,7 +14,7 @@ actor KnightSlam
 	}
 }
 
-ACTOR PB_Knight : HellKnight Replaces HellKnight
+ACTOR Knight : HellKnight Replaces HellKnight
 {
 	//$Title Hell Knight
 	//$Category Project Brutality - Monsters/Hell Nobles
@@ -1824,7 +1824,7 @@ ACTOR BrutalizedHellKnight3 : BrutalizedHellKnight1
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_HellKnight2 : PB_Knight
+Actor Vanilla_HellKnight2 : Knight
 {
 	DropItem "DemonStrengthRune" 3
 	States
@@ -1837,4 +1837,4 @@ Actor Vanilla_HellKnight2 : PB_Knight
 	}
 }
 
-Actor PB_HellKnight : PB_Knight{}
+Actor HellKnight : Knight{}

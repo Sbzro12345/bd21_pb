@@ -1,4 +1,4 @@
-ACTOR PB_Belphegor : BaronofHell replaces BaronofHell
+ACTOR Belphegor : BaronofHell replaces BaronofHell
 {
 	//$Title Belphegor
 	//$Category Project Brutality - Monsters/Hell Nobles
@@ -598,7 +598,7 @@ ACTOR BelphegorGreenPlasmaBall: BaronBall
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_LordBelphegor : PB_Belphegor Replaces BaronofHell
+Actor Vanilla_LordBelphegor : Belphegor Replaces BaronofHell
 {
 	DropItem "DemonStrengthRune" 9
 	States
@@ -616,5 +616,5 @@ Actor Vanilla_LordBelphegor : PB_Belphegor Replaces BaronofHell
 	}
 }
 
-Actor BelphegorClone : PB_Belphegor
+Actor BelphegorClone : Belphegor
 {}

@@ -1765,7 +1765,7 @@ ACTOR BrutalizedBaron3 : BrutalizedBaron2
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_Baron : PB_Baron Replaces BaronofHell
+Actor Vanilla_Baron : Baron Replaces BaronofHell
 {
 	DropItem "DemonStrengthRune" 9
 	States

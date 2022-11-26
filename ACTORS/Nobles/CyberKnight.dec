@@ -1,5 +1,5 @@
 //PhasicKnightX from X-Weapon Hellsturm, BRUTALIZED!//Translation "16:47=112:127", "192:207=80:111", "168:191=64:79"
-Actor PB_CyberKnight: Hellknight Replaces HellKnight
+Actor CyberKnight: Hellknight Replaces HellKnight
 {
 	//$Title Cyber Knight
 	//$Category Project Brutality - Monsters/Hell Nobles
@@ -1256,7 +1256,7 @@ ACTOR CyberKnightFreezer: EnemyPlasmaBall
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_CyberKnight : PB_CyberKnight
+Actor Vanilla_CyberKnight : CyberKnight
 {
 	DropItem "DemonStrengthRune" 6
 	States
@@ -1268,5 +1268,5 @@ Actor Vanilla_CyberKnight : PB_CyberKnight
 	}
 }
 
-Actor CyberKnight : PB_CyberKnight
+Actor CyberKnight : CyberKnight
 {}
