@@ -41,7 +41,7 @@ Actor CyberKnight: Hellknight Replaces HellKnight 2220
 	DropItem "DemonStrengthRune" 3
 	Obituary "%o was slain by a Cyber Hell Knight."
 	+DONTHURTSPECIES
-    MeleeDamage 5
+    MeleeDamage 10
      Species "Noble"
    +DONTHARMSPECIES
     +QUICKTORETALIATE
@@ -227,7 +227,7 @@ Actor CyberKnight: Hellknight Replaces HellKnight 2220
 	TNT1 A 0 A_SpawnItem("HeadshotTargetCyberKnight", 0, 56,0)
     CYUS GH 8 A_FaceTarget
 	TNT1 A 0 A_SpawnItem("HeadshotTargetCyberKnight", 0, 56,0)
-    CYUS I 8 A_CustomMissile("CyberFistAttack",10,0,0,0)
+    CYUS I 8 A_MeleeAttack
 	TNT1 A 0 A_SpawnItem("HeadshotTargetCyberKnight", 0, 56,0)
 	TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
     Goto See
@@ -239,7 +239,7 @@ Actor CyberKnight: Hellknight Replaces HellKnight 2220
 	TNT1 A 0 A_PlaySound("weapons/gswing")
     CYUS GH 8 A_FaceTarget
 	TNT1 A 0 A_SpawnItem("HeadshotTargetCyberKnight", 0, 56,0)
-    CYUS I 8 A_CustomMissile("CyberFistAttack",10,10,0,0)
+    CYUS I 8 A_MeleeAttack
     Goto See
 	
 	CurbstompMarine:
@@ -1174,12 +1174,13 @@ ACTOR CyberKnightMissile
 	Height 4
 	Speed 32
 	FastSpeed 32
-	Damage 23
+	Damage 50
 	PROJECTILE
 	Scale 0.75
     damagetype "ExplosiveImpact"
 	SeeSound "RLSHOT2"
 	DeathSound "Explosion"
+	+EXPLODEONWATER
 	States
 	{
 	Spawn:
@@ -1196,7 +1197,7 @@ ACTOR CyberKnightMissile
 	    EXPL AAA 0 A_CustomMissile ("ExplosionSmoke", 0, 0, random (0, 360), 2, random (0, 360))
 		TNT1 A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 	    EXPL A 0 Radius_Quake (2, 54, 0, 15, 0)
-		BFE1 A 0 Bright A_Explode(40, 120, 1)
+		BFE1 A 0 Bright A_Explode(100, 120, 1)
 		TNT1 A 0 A_SpawnItemEx ("NewRocketExploFX", 0, 0, 0)
         TNT1 A 0 A_SpawnItemEx("ExplosionParticleSpawner", 0, 0, 0, 0, 0, 0, 0, 128)
 		TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)

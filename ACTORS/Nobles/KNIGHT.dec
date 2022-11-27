@@ -9,7 +9,7 @@ actor KnightSlam
 	{
 		Spawn:
 			TNT1 A 0
-			TNT1 A 0 A_Explode(random(52,63),118,0)
+			TNT1 A 0 A_Explode(140,180,0,false,180)
 			Stop
 	}
 }
@@ -59,7 +59,7 @@ ACTOR PB_Knight : HellKnight Replaces HellKnight 2210
    +DONTHARMSPECIES
 +DONTHURTSPECIES
 +NOBLOODDECALS
-    MeleeDamage 5
+    MeleeDamage 10
 	
 	DropItem "Demonpickup2" 50
 	DropItem "Demonpickup" 196
@@ -92,7 +92,7 @@ ACTOR PB_Knight : HellKnight Replaces HellKnight 2210
 		TNT1 A 0 A_SpawnItem("HeadshotTargetKnight", 0, 56,0)
 		BOS2 F 6 A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTargetKnight", 0, 56,0)
-		BOS2 G 6 A_CustomMissile("KnightAttack",10,0,0,0)
+		BOS2 G 6 A_MeleeAttack
 		TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
 		Goto seecontinue
 		

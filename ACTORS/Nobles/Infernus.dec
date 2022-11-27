@@ -17,6 +17,7 @@ Actor Infernus : PB_Baron replaces BaronOfHell 2270
 	DropItem "Demonpickup2" 76
 	DropItem "Demonpickup2" 76
   Scale 1.08
+  MeleeDamage 14
   
   States
   {
@@ -239,7 +240,7 @@ Actor Infernus : PB_Baron replaces BaronOfHell 2270
   Melee:
     BRUS E 6 Bright A_FaceTarget
     BRUS F 6 Bright A_FaceTarget
-    BRUS G 6 Bright A_ComboAttack
+    BRUS G 6 Bright A_MeleeAttack
 	Goto See2
 	
   Missile:
@@ -779,7 +780,7 @@ Actor BruiserBall
 	+RANDOMIZE
 	+FORCEXYBILLBOARD
     +THRUGHOST
-    Damage (random(35,45))
+    Damage (random(50,65))
 	//RenderStyle Add
 	//Alpha 0.1
 	Scale 0.95
@@ -842,7 +843,7 @@ Actor BruiserBallBig:BruiserBall
 	Height 18
 	Speed 24
 	FastSpeed 25
-    Damage (random(50,60))
+    Damage (random(70,100))
 	Scale 1.35
 	DeathSound "belphegor/missile"
   States

@@ -28,6 +28,7 @@ ACTOR Belphegor : BaronofHell replaces BaronofHell 2260
 	Obituary "%o was no match for the great Belphegor."
 	MaxStepHeight 24
 	MaxDropOffHeight 32
+	MeleeDamage 14
 	+DONTHURTSPECIES
   Species "Noble"
    +DONTHARMSPECIES
@@ -111,7 +112,7 @@ TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
 		TNT1 A 0 A_SpawnItem("HeadshotTargetBelphegor", 0, 68,0)
 		BOS3 G 8 A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTargetBelphegor", 0, 68,0)
-		TNT1 A 0 A_CustomMissile("KnightAttack",9,0,0,0)
+		TNT1 A 0 A_MeleeAttack
 		BOS3 H 8 A_FaceTarget
 TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
 		Goto See
@@ -190,7 +191,7 @@ TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
 		Goto See
 		
 	Melee2:
-		TNT1 AA 0 A_CustomMissile("KnightAttack",9,0,0,0)
+		TNT1 AA 0 A_MeleeAttack
 		TNT1 A 0 A_PlaySound("weapons/gswing")
 		BOS3 H 8 A_FaceTarget
         TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
@@ -586,7 +587,7 @@ ACTOR BelphegorGreenPlasmaBall: BaronBall
 	Death:
     BFE1 A 0 A_PlaySound("FAREXPL", 3)
 	EXPL A 0 Radius_Quake (2, 54, 0, 15, 0)
-    BFE1 A 0 Bright A_Explode(27, 135, 1)
+    BFE1 A 0 Bright A_Explode(50, 135, 1)
         TNT1 A 0 A_SpawnItem ("GreenExplosionMushroom", 0)
         TNT1 AAAAAAAAA 0 A_CustomMissile ("GreenExplosionFire", 2, 0, random (0, 360), 2, random (0, 360))
         EXPL AA 0 A_CustomMissile ("BigNeoSmoke", 0, 0, random (0, 360), 2, random (0, 360))

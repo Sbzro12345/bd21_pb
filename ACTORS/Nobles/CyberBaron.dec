@@ -47,6 +47,7 @@ ACTOR CyberBaron replaces BaronofHell 2250
 	+BossDeath
 	+DONTHURTSPECIES
 	+QUICKTORETALIATE
+	MeleeDamage 12
 	BloodColor "Green"
 	
   states
@@ -180,7 +181,7 @@ ACTOR CyberBaron replaces BaronofHell 2250
 	CBOS Q 8 A_FaceTarget
 	TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
 	TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
-    CBOS R 8 A_CustomMissile("BaronAttack",8,0,0,0)
+    CBOS R 8 A_MeleeAttack
 	TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "CurbstompMarine")
 	TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
       Goto See
@@ -244,6 +245,10 @@ ACTOR CyberBaron replaces BaronofHell 2250
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
+		CBOS F 1 BRIGHT A_CustomMissile("CometDeathGlow",35,16,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
+		CBOS EE 1 A_FaceTarget
+		TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
@@ -264,46 +269,10 @@ ACTOR CyberBaron replaces BaronofHell 2250
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		CBOS F 1 BRIGHT A_CustomMissile("CometDeathGlow",35,16,0)
 		TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
 		CBOS EE 1 A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		CBOS F 1 BRIGHT A_CustomMissile("CometDeathGlow",35,16,0)
-		TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
-		CBOS EE 1 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTargetCyberBaron", 0, 64,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
-		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
 		TNT1 A 0 A_CustomMissile("FlamethrowerMissileFatso",35,16,0)
