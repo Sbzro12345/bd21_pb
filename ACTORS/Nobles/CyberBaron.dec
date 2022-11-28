@@ -31,6 +31,7 @@ ACTOR CyberBaron replaces BaronofHell 2250
 	DropItem "DemonStrengthRune" 9
 	DropItem "HasteSphere" 8
 	DropItem "DoubleSphere" 7
+	DropItem "Flamethrower2" 256
   PainChance "Kick", 200
   PainChance "ExtremePunches", 200
   PainChance "Head", 255

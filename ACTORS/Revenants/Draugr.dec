@@ -11,6 +11,7 @@ ACTOR Draugr : PB_Revenant Replaces Revenant 2120
   MeleeDamage 9
   DropItem "Demonpickup2" 80
   DropItem "Demonpickup" 255
+  DropItem "HellishMissileLauncher" 256
 	damagefactor "SSG", 2.0
   Scale 1.02
   	Species "Bonehead"

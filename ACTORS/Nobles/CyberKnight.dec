@@ -54,6 +54,7 @@ Actor CyberKnight: Hellknight Replaces HellKnight 2220
 	+MissileEvenMore
 	DropItem "Demonpickup2" 90
 	DropItem "Demonpickup" 196
+	DropItem "Rocket_Launcher" 256
   
   States 
   { 

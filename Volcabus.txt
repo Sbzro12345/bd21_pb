@@ -293,6 +293,261 @@ Pain.SSG:
 	
 	Death:
 		TNT1 A 0 A_Jump(128, "Death2", "Death3")
+Death.Eat:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+				
+		Death.HelperMarineFatallity:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.RVFT:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.PussyGrab:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Fatality:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Fatality1:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Fatality2:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Fatality3:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Fatality4:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.BHFT:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		GotoStealthKill:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		GroundExecution:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Vanish:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.KillMe:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Taunt:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Avoid:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		FallingDie:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Fall:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.MonsterShotgunBullet:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Shotgun:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Shotgunontheface:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DSFStop:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DeathShotgunontheface2:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DSFStop2:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Minor:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Down:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Trample:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Fire:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.FallInLava:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death20alt:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Arm:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Leg:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DeathLeg2:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DeathJump:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Melee:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Kick:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		HeadExploder:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.head:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.HeadMinor:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DeathHeadminor2:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.headExplode:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.StompWall:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Deathchickenhead:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DeathMirror:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.decaptate:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Minigun:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.LegMassacre:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Desintegrate:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.cut:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.HKFT:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Saw:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		DeathNoGuts:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Plasma:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.SuperPlasma:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.GreenFire:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Blast:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Blast2:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.SSG:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Railgun:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.ExtremePunches:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Shrapnel:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.ExplosiveImpact:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Landmine:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop
+					
+		Death.Stomp:
+			TNT1 A 0 A_Jump(256, "Death")
+			Stop	
 	Death1:
 		F5T2 A 7
 		F5T2 B 7 A_Scream

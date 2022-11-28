@@ -15,6 +15,7 @@ DropItem "Demonpickup2" 255
  DropItem "Demonpickup2" 255
  DropItem "Demonpickup2" 255
  DropItem "Demonpickup2" 255
+ DropItem "BIG_FUCKING_GUN" 256
 	Species "MasterMind"
 
 States 

@@ -46,6 +46,7 @@ ACTOR CyberPaladin replaces HellKnight
 	DropItem "ShieldSphere" 4
 	DropItem "Demonpickup2" 90
     DropItem "Demonpickup" 196
+	DropItem "GrenadeLauncher" 256
 	States
 	{ 
 	

@@ -44,6 +44,7 @@ ACTOR PB_Revenant: Revenant Replaces Revenant 2100
 	HitObituary "$OB_UNDEADHIT"
 	Obituary "$OB_UNDEAD"
 	DropItem "DemonStrengthRune" 5
+	DropItem "HellishMissileLauncher" 256
 damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood", 0.0
 	MaxStepHeight 24
 	+DONTHURTSPECIES

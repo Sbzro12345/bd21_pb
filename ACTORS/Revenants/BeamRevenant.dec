@@ -12,6 +12,7 @@ ACTOR BeamRevenant : PB_Revenant Replaces Revenant 2110
   MeleeDamage 8
   DropItem "Demonpickup2" 80
   DropItem "Demonpickup" 255
+  DropItem "HellishMissileLauncher" 256
   
   	Species "Bonehead"
    +DONTHARMSPECIES
