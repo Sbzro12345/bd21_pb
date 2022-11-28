@@ -1,4 +1,9 @@
 //Cyberdemon
+#include "ACTORS/Bosses/Mastermind.dec"
+#include "ACTORS/Bosses/Demolisher.dec"
+#include "ACTORS/Bosses/Juggernaut.dec"
+
+//Cyberdemon
 #include "ACTORS/Bosses/Cyberdemon.dec"
 #include "ACTORS/Bosses/Annihilator.dec"
 
