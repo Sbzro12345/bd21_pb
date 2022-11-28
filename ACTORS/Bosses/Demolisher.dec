@@ -1,12 +1,11 @@
-ACTOR PB_Demolisher : PB_Mastermind Replaces SpiderMastermind
+ACTOR Demolisher : Mastermind Replaces SpiderMastermind 2430
 {
-	//$Title Demolisher
+	Tag "Demolisher"
 	//$Category Project Brutality - Monsters/Bosses
 	//$Sprite DEMOA1D1
-SpawnID 2430
 Obituary "The Supreme Spider Mastermind turned %o into a steaming pile of gore."
 Health 5000
-Scale 1.45
+Scale 1.1
 
 DropItem "Demonpickup2" 255
  DropItem "Demonpickup2" 255
@@ -23,7 +22,7 @@ States
    Death.KillMe:
     Death.Taunt:
 	    TNT1 A 0 A_ChangeFlag("SOLID", 0)
-        TNT1 A 0 A_SpawnItem("PB_Mastermind")
+        TNT1 A 0 A_SpawnItem("Mastermind")
         Stop
 		
 	ReplaceVanilla:
@@ -33,7 +32,6 @@ States
 		Stop
 	
 	Spawn:
-	TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
 		TNT1 AA 0
 		DEMO A 10 A_Look
 		TNT1 A 0 A_GiveInventory("TargetIsAMastermind")
@@ -169,26 +167,6 @@ States
 		DEMO U 5 Bright  A_CustomMissile("MastermindBFGSmallSphere", 64, 0, 0)
 		TNT1 A 0 A_SpawnItem("MasterMindHitBox", 0, 81,0)
 		DEMO T 6 A_FaceTarget
-		TNT1 A 0 bright A_CustomMissile ("SmallGreenFlameTrails", 64, 0, random (0, 360), 2, random (70, 110))
-		TNT1 A 0 A_CustomMissile ("BallGettingReadyGreen", 64, 0, random (0, 140), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItem("MasterMindHitBox", 0, 81,0)
-		TNT1 A 0 Bright A_Playsound ("BFGFIRE")
-		DEMO U 5 Bright  A_CustomMissile("MastermindBFGSmallSphere", 64, 0, 0)
-		TNT1 A 0 A_SpawnItem("MasterMindHitBox", 0, 81,0)
-		DEMO T 6 A_FaceTarget
-		TNT1 A 0 bright A_CustomMissile ("SmallGreenFlameTrails", 64, 0, random (0, 360), 2, random (70, 110))
-		TNT1 A 0 A_CustomMissile ("BallGettingReadyGreen", 64, 0, random (0, 140), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItem("MasterMindHitBox", 0, 81,0)
-		TNT1 A 0 Bright A_Playsound ("BFGFIRE")
-		DEMO U 5 Bright  A_CustomMissile("MastermindBFGSmallSphere", 64, 0, 0)
-		TNT1 A 0 A_SpawnItem("MasterMindHitBox", 0, 81,0)
-		DEMO T 6 A_FaceTarget
-		TNT1 A 0 bright A_CustomMissile ("SmallGreenFlameTrails", 64, 0, random (0, 360), 2, random (70, 110))
-		TNT1 A 0 A_CustomMissile ("BallGettingReadyGreen", 64, 0, random (0, 140), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItem("MasterMindHitBox", 0, 81,0)
-		TNT1 A 0 Bright A_Playsound ("BFGFIRE")
-		DEMO U 5 Bright A_CustomMissile("MastermindBFGSmallSphere", 64, 0, 0)
-		TNT1 A 0 A_SpawnItem("MasterMindHitBox", 0, 81,0)
 		DEMO T 9 
 		Goto See
 	
@@ -217,33 +195,18 @@ States
 	
 	Pain.Siphon:
 		TNT1 AAA 0 A_SpawnItemEx ("RedLightning_Small", random (-12, 12), random (-12, 12), random (16, 52), 0, 0)
-		DEMO I 1 
-		{
-			A_FaceTarget;
-			A_GiveToTarget("HealthBonus",4);
-		}
+		DEMO I 1 A_FaceTarget
+		DEMO I 1 A_GiveToTarget("HealthBonus",4)
 		DEMO I 5 A_FaceTarget 
 		TNT1 A 0 A_Pain
 		Goto See
 
 	Death:
 		TNT1 A 0 A_StopSound(5)
-		TNT1 A 0 {	
-			if(CountInv("FreezerSelected", AAPTR_TARGET) == 1 && CountInv("FreezerPistolToken", AAPTR_TARGET) != 1)
-				{return state ("Death.Ice");}
-			if(CountInv("FreezerSelected", AAPTR_TARGET) == 1 && CountInv("FreezerPistolToken", AAPTR_TARGET) != 1 && CountInv("FireModeFreezerBeam", AAPTR_TARGET) ==1)
-				{return state("Death.IceBeam");}
-				return state("");
-			}
+		TNT1 A 0 A_Jump(256, "NormalDeath")
 	NormalDeath:
 		DEMO J 20 A_Scream
-		TNT1 A 0
-		{
-			if (GetCvar("pb_enemyexplosiondamage") == true)
-			{
-				A_Explode(250,radius * 2.5,XF_HURTSOURCE);
-			}
-		}
+		TNT1 A 0 A_Explode(250,radius * 2.5,XF_HURTSOURCE)
 		EXPL A 0 Radius_Quake (8, 100, 0, 22, 0)
         TNT1 AA 0 A_CustomMissile ("ExplosionSpawner", 50, 0, random (0, 360), 2, random (0, 360))
         TNT1 AA 0 A_CustomMissile ("SuperGoreSPawner", 110, 0, random (0, 360), 2, random (0, 180))
@@ -339,13 +302,7 @@ Death.decaptate:
         TNT1 AA 0 A_CustomMissile ("UltraGoreSPawner", 80, 0, random (0, 360), 2, random (0, 180))
         TNT1 AA 0 A_CustomMissile ("SuperGoreSpawner", 80, 0, random (0, 360), 2, random (0, 180))
 		SPID L 0
-		TNT1 A 0
-		{
-			if (GetCvar("pb_enemyexplosiondamage") == true)
-			{
-				A_Explode(290,450,XF_HURTSOURCE);
-			}
-		}
+		TNT1 A 0 A_Explode(290,450,XF_HURTSOURCE)
 		Goto Burns
    } 
 }
@@ -360,9 +317,18 @@ Actor SpiderMastermindExtraAggressive : Inventory
 inventory.maxamount 1
 }
 
+ACTOR MastermindBFGSmallSphere : SuperBFGBall
+{
+	SeeSound "mbfgsh"
+	+DOHARMSPECIES
+	-THRUSPECIES
+	-MTHRUSPECIES
+	Species "MasterMind"
+}
+
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_Demolisher : PB_Demolisher
+Actor Vanilla_Demolisher : Demolisher
 {
 	DropItem "DemonStrengthRune" 40
 	States
