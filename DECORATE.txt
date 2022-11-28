@@ -1,5 +1,6 @@
 //Cyberdemon
 #include "ACTORS/Bosses/Cyberdemon.dec"
+#include "ACTORS/Bosses/Annihilator.dec"
 
 //Revenants
 #include "ACTORS/Revenants/Revenant.dec"
