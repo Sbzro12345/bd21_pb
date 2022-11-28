@@ -3,7 +3,7 @@
 
 //Revenants
 #include "ACTORS/Revenants/Revenant.dec"
-#include "ACTORS/Revenants/BeamRev.dec"
+#include "ACTORS/Revenants/BeamRevenant.dec"
 #include "ACTORS/Revenants/Draugr.dec"
 
 //Barons
