@@ -10,6 +10,8 @@ ACTOR Arachnotron2: Arachnotron1
 	Health 1250
 	Obituary "%o was killed by an Ancient Arachnotron."
 	Tag "Ancient Arachnotron"
+	+DONTHURTSPECIES
+	+DONTHARMSPECIES
 	States
 	{
 	Pain.Killme:

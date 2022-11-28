@@ -13,7 +13,6 @@ ACTOR CyberPaladin replaces HellKnight
 	+AvoidMelee
 	+DONTHURTSPECIES
 	+DONTHARMSPECIES
-	+QuickToRetaliate
 	Species "Noble"
 	
 	damagefactor "Crush", 10.0

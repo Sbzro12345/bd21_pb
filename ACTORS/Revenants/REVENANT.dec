@@ -8,14 +8,13 @@ Actor RevenantJetpack : Inventory
 inventory.maxamount 1
 }
 
-ACTOR Revenant: Revenant Replaces Revenant
+ACTOR PB_Revenant: Revenant Replaces Revenant 2100
 {
-	//$Title Revenant
+	Tag "Revenant"
 	//$Category Project Brutality - Monsters/Revenants
 	//$Sprite SKELA1D1
 	GibHealth 45
 	Health 300
-	SpawnID 2100
 	Monster
 	MeleeThreshold 196
 	+FLOORCLIP
@@ -52,6 +51,7 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 	MaxDropOffHeight 32
 	Radius 20
 	Height 60
+	MeleeDamage 8
 	
 	Species "Bonehead"
    +DONTHARMSPECIES
@@ -92,8 +92,6 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 	
 	Spawn:
 		SKEL A 1
-		TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
-		TNT1 A 0 ACS_NamedExecuteAlways("JetpackRevenant", 0)
 	    TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "FatalityMarine")
 	Stand:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10", 26, 70, 0)
@@ -196,7 +194,7 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 		TNT1 A 0 A_SpawnItem("HeadshotTarget8", 26, 70, 0)
 		SKEL H 6 A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget8", 26, 70, 0)
-		TNT1 A 0 A_CustomMissile("RevenantAttack",10,0,0,0)
+		TNT1 A 0 A_MeleeAttack
 		SKEL I 6
 		TNT1 A 0 A_JumpIfInventory("ZombiemanFatality", 1, "FatalityZombieman")
         TNT1 A 0 A_JumpIfInventory("SergeantFatality", 1, "FatalitySergeant")
@@ -233,7 +231,7 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 		
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10", 26, 70, 0)
 		TNT1 A 0 A_PlaySound("hellishmissle/fire", 1)
-		SKEL J 10 BRIGHT A_CustomMissile("RevenantSeeker",50,15,0,0)
+		SKEL J 10 BRIGHT A_CustomMissile("revenantseekermissiles",50,15,0,0)
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10", 26, 70, 0)
 		SKEL K 10 A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10", 26, 70, 0)
@@ -242,7 +240,7 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 		SKEL K 9 A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10", 26, 70, 0)
 		TNT1 A 0 A_PlaySound("hellishmissle/fire", 2)
-		SKEL J 10 BRIGHT A_CustomMissile("RevenantSeeker",50,-15,0,0)
+		SKEL J 10 BRIGHT A_CustomMissile("revenantseekermissiles",50,-15,0,0)
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10", 26, 70, 0)
 		SKEL K 10 A_FaceTarget
 		
@@ -717,18 +715,12 @@ Death:
 		TNT1 A 0 A_CustomMissile("BurnParticles", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_CustomMissile("FireballExplosionFlamesBig", 40, 0, random (0, 360), 2, random (50, 130))
 		TNT1 A 0 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
-		JKED ABCDEFGH 3
-		{
-			ThrustThing(angle*256/360+random(-6, 6), 14, 0, 0);
-			ThrustThingZ(0,random(-10, 10),0,1);
-			A_CustomMissile("BurnParticles", 40, 0, random (0, 360), 2, random (50, 130));
-			A_CustomMissile("FireballExplosionFlamesBig", 40, 0, random (0, 360), 2, random (50, 130));
-			A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130));
-		/*	if (GetCvar("pb_enemyexplosiondamage") == true)
-			{
-				A_Explode(200,200);
-			}*/
-		}
+		JKED ABCDEFGH 3 ThrustThing(angle*256/360+random(-6, 6), 14, 0, 0)
+		JKED ABCDEFGH 3 ThrustThingZ(0,random(-10, 10),0,1)
+		JKED ABCDEFGH 3 A_CustomMissile("BurnParticles", 40, 0, random (0, 360), 2, random (50, 130))
+		JKED ABCDEFGH 3 A_CustomMissile("FireballExplosionFlamesBig", 40, 0, random (0, 360), 2, random (50, 130))
+		JKED ABCDEFGH 3 A_CustomMissile("ExplosionParticleVerySlow", 40, 0, random (0, 360), 2, random (50, 130))
+		JKED ABCDEFGH 3 A_Explode(200,200)
 		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_SpawnItemEx ("BarrelKaboom",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_PlaySound("FAREXPL")
@@ -1259,51 +1251,6 @@ ACTOR RevenantBalls Replaces RevenantTracer
 	}
 }
 
-ACTOR RevenantMissile
-{
-	Game Doom
-	SpawnID 53
-	Radius 4
-	Height 4
-	Speed 10
-	FastSpeed 18
-	Damage (random(15,25))
-	PROJECTILE
-	+THRUGHOST // Uncommenting THRUGHOST fixed a minor issue with the Revenant Missile exploding as soon as it was spawned from the Jetpack and Special attack
-	+SEEKERMISSILE
-	Scale 1.0
-    damagetype "Blast"
-	SeeSound "skeleton/attack"
-	DeathSound "LightExplosion"
-	States
-	{
-	Spawn:
-		TNT1 A 0 A_PlaySound("weapons/rocketloop",6,1,1)
-		FATB AB 1 BRIGHT A_SpawnItem("YellowFlareSmall",0,0)
-		TNT1 A 0 A_SpawnItemEx("RevenantProjectileTrails", 0, 0, 0, 0, 0, 0, 0, 128) 
-		TNT1 A 0 A_SpawnItem ("OldschoolRocketSmokeTrail2")
-		TNT1 A 0 A_CustomMissile ("OldschoolRocketSmokeTrail2", 2, 0, random (160, 210), 2, random (-30, 30))
-		Loop
-	Death:
-		TNT1 A 0 A_StopSound(6)
-	    EXPL AAA 0 A_CustomMissile ("ExplosionSmoke", 0, 0, random (0, 360), 2, random (0, 360))
-	    EXPL A 0 Radius_Quake (2, 54, 0, 15, 0)
-		TNT1 A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		BFE1 A 0 Bright A_Explode(7, 120, 1)
-        TNT1 A 0 A_SpawnItemEx("ExplosionParticleSpawner", 0, 0, 0, 0, 0, 0, 0, 128)
-		TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-	
-		EXPL A 0
-		TNT1 A 0 A_SpawnItemEx ("NewRocketExploFX_Small",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-        TNT1 AAAA 0 A_CustomMissile ("SmallExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-		TNT1 A 10
-		Stop
-	}
-}
-
 Actor DeadSkeleton: CurbstompedMarine
 {
     Radius 4
@@ -1460,35 +1407,6 @@ Actor DeadSkeletonSKL9K: DeadSkeleton
 		 TNT1 AAA 0 A_CustomMissile ("XDeath3", 5, 0, random (0, 360), 2, random (0, 160))
 		 TNT1 AAA 0 A_CustomMissile ("XDeath4", 5, 0, random (0, 360), 2, random (0, 160))
 		Stop}}		
-		
-ACTOR REvenantAttack: BaronBall
-{
-	Radius 24
-	Height 16
-	DamageType RVFT
-	Projectile 
-	+RANDOMIZE
-	+FORCEXYBILLBOARD
-    +THRUGHOST
-	RenderStyle Add
-	Alpha 0.6
-    Damage 10
-    Speed 28
-	//HitObituary "$OB_IMPHIT"
-	SeeSound "none"
-	DeathSound "none"
-	Decal "none"
-	States
-	{
-	Spawn:
-		TNT1 A 1 BRIGHT
-        TNT1 A 1 //A_PlaySound("weapons/gswing")
-		Goto Death
-	Death:
-		TNT1 A 0 BRIGHT
-		Stop
-	}
-}
 
 ACTOR RevenantPiece
 {
@@ -1761,105 +1679,6 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 	    TNT1 A 0 A_ChangeFlag("SOLID", 0)
         TNT1 A 0 A_SpawnItem("RevenantU")
         Stop
-	}
-}
-
-ACTOR RevenantSeeker
-{
-	Game Doom
-	SpawnID 53
-	Radius 11
-	Height 8
-	Speed 11
-	FastSpeed 15
-	Damage 2
-	PROJECTILE
-	+THRUGHOST
-	+SEEKERMISSILE
-	+FORCEXYBILLBOARD
-	Scale 1.0
-    damagetype "ExplosiveImpact"
-	SeeSound "skeleton/attack"
-	DeathSound "LightExplosion"
-	States
-	{
-	Spawn:
-		TNT1 A 0 A_PlaySound("weapons/rocketloop",6,1,1)
-		Fly:
-	    TNT1 A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
-		FATB AB 1 BRIGHT A_SpawnItem("RedFlareSmall",0,0)
-        TNT1 A 0 A_SeekerMissile (4,8)
-		TNT1 A 0 A_SpawnItemEx("RevenantProjectileTrails", 0, 0, 0, 0, 0, 0, 0, 128) 
-		TNT1 A 0 A_SpawnItem ("RocketSmokeTrail52")
-		Loop
-
-
-	SpawnUnderwater:
-		FATB A 1 BRIGHT A_SpawnItem("RedFlareSmall",0,0)
-        TNT1 A 0 A_SeekerMissile (4,8)
-		TNT1 A 0 A_CustomMissile ("BUBULZ", 0, 0, random (0, 360), 2, random (0, 180))
-		FATB B 1 BRIGHT A_SpawnItem("RedFlareSmall",0,0)
-		TNT1 A 0 A_CustomMissile ("BUBULZ", 0, 0, random (0, 360), 2, random (0, 180))
-		Goto Spawn
-
-
-	Death:
-		TNT1 A 0 A_StopSound(6)
-	    EXPL A 0 Radius_Quake (2, 54, 0, 15, 0)
-		TNT1 A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-	TNT1 A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		BFE1 A 0 Bright A_Explode(7, 120, 1)
-		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-        TNT1 A 0 A_SpawnItemEx("ExplosionParticleSpawner", 0, 0, 0, 0, 0, 0, 0, 128)
-		EXPL A 0
-        TNT1 AAAAA 0 A_CustomMissile ("SmallExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 10
-		Stop
-	}
-}
-
-ACTOR RevenantSeeker2 : RevenantSeeker
-{
-	Damage 17
-	SeeSound "HMLF1"
-	States
-	{
-	Death:
-		TNT1 A 0 A_StopSound(6)
-	    EXPL A 0 Radius_Quake (2, 54, 0, 15, 0)
-		TNT1 A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-	TNT1 A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		BFE1 A 0 Bright A_Explode(15, 120, 1)
-		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-        TNT1 A 0 A_SpawnItemEx("ExplosionParticleSpawner", 0, 0, 0, 0, 0, 0, 0, 128)
-		EXPL A 0
-        TNT1 AAAAA 0 A_CustomMissile ("SmallExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 10
-		Stop
-	}
-}
-
-ACTOR RevenantSeeker3 : RevenantSeeker
-{
-	Damage 17
-	SeeSound "HMLF2"
-	States
-	{
-	Death:
-		TNT1 A 0 A_StopSound(6)
-	    EXPL A 0 Radius_Quake (2, 54, 0, 15, 0)
-		TNT1 A 0 A_SpawnItemEx ("UnderwaterExplosion",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx ("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-	TNT1 A 0 A_SpawnItemEx ("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		BFE1 A 0 Bright A_Explode(15, 120, 1)
-		TNT1 A 0 A_SpawnItemEx ("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-        TNT1 A 0 A_SpawnItemEx("ExplosionParticleSpawner", 0, 0, 0, 0, 0, 0, 0, 128)
-		EXPL A 0
-        TNT1 AAAAA 0 A_CustomMissile ("SmallExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 10
-		Stop
 	}
 }
 
@@ -2157,14 +1976,13 @@ ACTOR BigBlastedRevenant
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_Revenant: Revenant
+Actor Vanilla_Revenant: PB_Revenant
 {
 	DropItem "DemonStrengthRune" 5
 	States
 	{
 		Spawn:
 		TNT1 A 0
-		SKEL A 1 ACS_NamedExecuteAlways("JetpackRevenant", 0)
 	    TNT1 A 0 A_JumpIfInventory("Curbstomp_Marine", 1, "FatalityMarine")
 		SKEL A 6 A_Look
 		Goto Stand

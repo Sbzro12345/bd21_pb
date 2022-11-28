@@ -21,7 +21,6 @@ ACTOR PB_Baron : BaronofHell Replaces BaronofHell 2240
 	damagefactor "killme", 0.0
 	damagefactor "SSG", 0.75
 	damagefactor "Head", 0.6
-	+QUICKTORETALIATE
 	PainChance "Explosive", 255
 	damagefactor "DontCallTheBaron", 0.0
 	DamageFactor "CauseObjectsToSplash", 0.0

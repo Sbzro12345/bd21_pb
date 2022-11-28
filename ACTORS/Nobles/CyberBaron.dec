@@ -46,7 +46,6 @@ ACTOR CyberBaron replaces BaronofHell 2250
 	MONSTER
 	+BossDeath
 	+DONTHURTSPECIES
-	+QUICKTORETALIATE
 	MeleeDamage 12
 	BloodColor "Green"
 	

@@ -50,7 +50,6 @@ ACTOR InfernalCacodemon replaces Cacodemon
 	+FIRERESIST
 	+DONTHURTSPECIES
 	+DONTHARMSPECIES
-	+QUICKTORETALIATE
 	
 	States 
 	   { 

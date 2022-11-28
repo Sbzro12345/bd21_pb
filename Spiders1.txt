@@ -27,7 +27,6 @@ ACTOR Arachnotron1: Arachnotron replaces Arachnotron
 	Species "Spider"
 	+DONTHURTSPECIES
 	+DONTHARMSPECIES
-	+QuickToRetaliate
     Scale 1.1
 	Health 750
 	DeathHeight 4

@@ -21,7 +21,6 @@ actor Arachnophyte replaces Arachnotron
     +NORADIUSDMG
 	+DONTHARMSPECIES
 	+DontHurtSpecies
-	+QuickToRetaliate
 	Species "Spider"
     SeeSound "arachnophyte/sight"
     PainSound "arachnophyte/pain"

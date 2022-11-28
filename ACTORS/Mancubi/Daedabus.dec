@@ -40,7 +40,6 @@ BloodType "Brutal_Blood", "SawBlood", "SawBlood"
 	Species "BigFatAss"
    	+DONTHARMSPECIES
 	+DontHurtSpecies
-	+QuickToRetaliate
 	+DONTHARMCLASS
 	MONSTER
     +FLOORCLIP

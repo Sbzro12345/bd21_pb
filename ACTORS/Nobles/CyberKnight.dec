@@ -44,7 +44,6 @@ Actor CyberKnight: Hellknight Replaces HellKnight 2220
     MeleeDamage 10
      Species "Noble"
    +DONTHARMSPECIES
-    +QUICKTORETALIATE
 	DropItem "DemonStrengthRune" 7
 	DropItem "HasteSphere" 6
 	DropItem "DoubleSphere" 5

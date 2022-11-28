@@ -46,7 +46,6 @@ ACTOR PB_Knight : HellKnight Replaces HellKnight 2210
 	Mass 2000
 	-BOSSDEATH
 	-FASTER
-	+QUICKTORETALIATE
 	MaxStepHeight 24
 	MaxDropOffHeight 32
 	damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood", 0.0

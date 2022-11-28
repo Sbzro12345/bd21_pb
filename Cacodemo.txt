@@ -23,7 +23,6 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 	+FLOAT
 	+NOGRAVITY
 	+FORCEXYBILLBOARD
-	+QUICKTORETALIATE
 	+DONTHARMSPECIES
 	+DONTHURTSPECIES
 	SeeSound "caco/sight"

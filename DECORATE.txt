@@ -1,3 +1,11 @@
+//Cyberdemon
+#include "ACTORS/Bosses/Cyberdemon.dec"
+
+//Revenants
+#include "ACTORS/Revenants/Revenant.dec"
+#include "ACTORS/Revenants/BeamRev.dec"
+#include "ACTORS/Revenants/Draugr.dec"
+
 //Barons
 #include "ACTORS/Nobles/Baron.dec"
 #include "ACTORS/Nobles/DyingBaron.dec"

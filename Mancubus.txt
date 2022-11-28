@@ -31,7 +31,6 @@ ACTOR Mancubus : Fatso Replaces Fatso
 	damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood", 0.0
         +DONTHARMSPECIES
 	+DontHurtSpecies
-	+QuickToRetaliate
 	+THRUGHOST
 	-FASTER
 	DeathHeight 6

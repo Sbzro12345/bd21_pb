@@ -302,6 +302,8 @@ nazi/helmet NAZIHELM //From videovo.net and sounds-mp3.com
 
 //REVENANTS
 //BEAM REVENANT
+Weapons/StachanovFly		STCHFLY
+weapons/StachanovHit		STCHHIT
 $random weapons/revrailgf { revrail1 revrail2 revrail3 }
 revrail1 REILGF1
 revrail2 REILGF2

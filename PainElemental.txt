@@ -11,7 +11,6 @@ ACTOR PainElemental1 Replaces PainElemental
 	+FLOAT 
 	+NOGRAVITY
 	+FORCEXYBILLBOARD
-	+QUICKTORETALIATE
 	SeeSound "pain/sight"
 	damagefactor "Avoid", 0.0
 	damagefactor "GibRemoving", 0.0 damagefactor "HumanBBQ", 0.0
