@@ -695,7 +695,7 @@ ACTOR RevanentBeam : FastProjectile
   -CANNOTPUSH
   +NODAMAGETHRUST
   -EXTREMEDEATH
- // +FORCERADIUSDMG
+  +FORCERADIUSDMG
   DeathSound "weapons/StachanovHit"
   MissileType "RevanentBeamTrail"
   MissileHeight 10
