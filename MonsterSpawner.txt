@@ -334,9 +334,9 @@ States
 		TNT1 A 1
 		TNT1 A 0 A_JumpIf(x == 304, "ReplaceForBoss1")
 		TNT1 A 0 A_JumpIf(x == 528, "ReplaceForBoss2")
-		TNT1 A 0 A_Jump(38, "Infernus")
-		TNT1 A 0 A_Jump(75, "CyberBaron")
-		TNT1 A 0 A_Jump(107, "Belphegor")
+		TNT1 A 0 A_Jump(51, "Infernus")
+		TNT1 A 0 A_Jump(64, "CyberBaron")
+		TNT1 A 0 A_Jump(85, "Belphegor")
 		TNT1 A 0 A_Jump(256, "PB_Baron")
 	
 
@@ -514,8 +514,8 @@ States
 	 Spawn:
 		TNT1 A 0
 		TNT1 A 1
+		TNT1 A 0 A_Jump(52, "CyberKnight")
 		TNT1 A 0 A_Jump(64, "CyberPaladin")
-		TNT1 A 0 A_Jump(85, "CyberKnight")
 		TNT1 A 0 A_Jump(256, "PB_Knight")
 
 	PB_Knight:
@@ -623,8 +623,8 @@ States
 	 Spawn:
 		TNT1 A 0
 		TNT1 A 1
-		TNT1 A 0 A_Jump(84, "Daedabus")		
-		TNT1 A 0 A_Jump(126, "Volcabus")
+		TNT1 A 0 A_Jump(51, "Volcabus")		
+		TNT1 A 0 A_Jump(128, "Daedabus")
 		TNT1 A 0 A_Jump(256, "Mancubus")
 
 	Mancubus:
@@ -659,7 +659,7 @@ States
 		TNT1 A 0 A_JumpIf(x == -2720, "ReplaceForMotherdemon1")
 		TNT1 A 0 A_JumpIf(x == 0, "ReplaceForMotherdemon2")
 		TNT1 A 1
-		TNT1 A 0 A_Jump(52, "PB_Juggernaut")
+		TNT1 A 0 A_Jump(52, "Juggernaut")
 		TNT1 A 0 A_Jump(64, "Demolisher")
 		TNT1 A 0 A_Jump(256, "Mastermind")
 
@@ -675,10 +675,10 @@ States
 		TNT1 A 0 A_SpawnItemEx ("Demolisher",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
 		Stop
 
-	PB_Juggernaut:
+	Juggernaut:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx ("PB_Juggernaut",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
+		TNT1 A 0 A_SpawnItemEx ("Juggernaut",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS ,0, tid)
 		Stop
 
 
@@ -732,9 +732,9 @@ States
 	Spawn:
 		TNT1 A 0
 		TNT1 A 1
-		TNT1 A 0 A_Jump(26, "Overlord")
-		TNT1 A 0 A_Jump(85, "SufferingElemental")
-		TNT1 A 0 A_Jump(128, "TriteElemental")
+		TNT1 A 0 A_Jump(39, "Overlord")
+		TNT1 A 0 A_Jump(84, "SufferingElemental")
+		TNT1 A 0 A_Jump(126, "TriteElemental")
 		TNT1 A 0 A_Jump(256, "PainElemental1")
 
 
@@ -821,9 +821,9 @@ States
 	 Spawn:
 		TNT1 A 0
 		TNT1 A 1
-		TNT1 A 0 A_Jump(30, "FleshWizard")
-		TNT1 A 0 A_Jump(85, "Hellion")
-		TNT1 A 0 A_Jump(128, "Icevile")
+		TNT1 A 0 A_Jump(52, "FleshWizard")
+		TNT1 A 0 A_Jump(80, "Hellion")
+		TNT1 A 0 A_Jump(116, "Icevile")
 		TNT1 A 0 A_Jump(256, "PB_Archvile")	
 
 	PB_Archvile:

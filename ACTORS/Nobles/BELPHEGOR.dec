@@ -35,6 +35,7 @@ ACTOR Belphegor : BaronofHell replaces BaronofHell 2260
 +DONTHARMCLASS
 +MISSILEMORE
 +BossDeath
++THRUSPECIES
    Speed 13
    
 	States

@@ -26,6 +26,7 @@ ACTOR InfernalArachnotron: Arachnotron replaces Arachnotron 1610
 	PainChance "Stun", 255
 	PainChance "Siphon", 255
 	Species "Spider"
+	Radius 36
 	States
 	{
 	Death.Blackhole:

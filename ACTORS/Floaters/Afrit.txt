@@ -24,6 +24,7 @@ Actor Afrit replaces Cacodemon
   +FORCEXYBILLBOARD
   +DONTHARMSPECIES
   +DONTHURTSPECIES
+  +THRUSPECIES
   +NEVERFAST
   -MissileEvenMore
   Obituary "%o was scorched by an Afrit"

@@ -4,7 +4,8 @@ ACTOR Arachnotron1: Arachnotron replaces Arachnotron
 	+FLOORCLIP
 	+BOSSDEATH
     GibHealth 20
-	Radius 36
+	Radius 30
+	Height 58
     damagefactor "Crush", 10.0
 	damagefactor "Avoid", 0.0
 	damagefactor "GibRemoving", 0.0 PainChance "HangingHook", 0

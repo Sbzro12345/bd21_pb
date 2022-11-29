@@ -1,4 +1,4 @@
-ACTOR PB_Juggernaut : Fatso Replaces SpiderMastermind 2440
+ACTOR Juggernaut : Fatso Replaces SpiderMastermind 2440
 {
 	Tag "Juggernaut"
 	//$Category Project Brutality - Monsters/Bosses

@@ -39,6 +39,7 @@ MONSTER
 -SOLID
 +NOTARGET
 +QUICKTORETALIATE
++THRUSPECIES
 MaxStepHeight 24
 MaxDropOffHeight 32
 Species "Archvile"
