@@ -31,6 +31,7 @@ PainSound "monster/ovlpai"
 DeathSound "monster/ovldth"
 ActiveSound "monster/ovlact"
 MeleeSound "caco/melee"
+DropItem "Unmaker" 256
 Species "FlyingBalls"
   states
   {

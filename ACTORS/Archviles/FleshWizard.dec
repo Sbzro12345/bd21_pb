@@ -26,6 +26,7 @@ DropItem "DemonStrengthRune" 7
 	DropItem "DoubleSphere" 7
 	DropItem "Demonpickup2" 255
  DropItem "Demonpickup2" 255
+ DropItem "Unmaker" 256
 	PainChance "Stun", 255
 	PainChance "Siphon", 255
 missiletype WizardBall
