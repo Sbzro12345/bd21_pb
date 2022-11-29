@@ -449,7 +449,7 @@ ACTOR PaladinGrenade
 	Radius 8
 	Height 8
 	Speed 25
-	Damage 50
+	Damage (random(50,50))
 	Projectile
 	-NOGRAVITY
 	+GRENADETRAIL

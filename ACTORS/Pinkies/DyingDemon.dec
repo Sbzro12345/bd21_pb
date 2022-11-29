@@ -59,7 +59,7 @@ ACTOR PoorPinkyLostHisArm: PB_Demon
 }
 }
 
-ACTOR PoorMeanDemonLostHisArm: PB_MeanDemon
+ACTOR PoorMeanDemonLostHisArm: MeanDemon
 {
 	Health 110
 	+NOPAIN

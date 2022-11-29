@@ -1,4 +1,4 @@
-Actor MeanDemon : Demon Replaces Demon
+Actor MeanDemon : PB_Demon Replaces Demon 1520
 {
 	//$Title Mean Demon
 	//$Category Project Brutality - Monsters/Pinkies
@@ -7,13 +7,11 @@ Actor MeanDemon : Demon Replaces Demon
 	Health 300
 	PainChance 140
 	Speed 12
-    FastSpeed 15
 	Radius 30
 	Height 56
 	Mass 650
 	Monster
 	Scale 1.1
-	SpawnID 1520
 	+FloorClip
 	//-TELESTOMP
 	//-NOTELEFRAG
@@ -63,16 +61,8 @@ Actor MeanDemon : Demon Replaces Demon
 		TNT1 A 1 A_SpawnItemEx ("MeanPinkyShrinkFX7", 0, 0, 5, 0, 0)
 		TNT1 A 1 A_SpawnItemEx ("LilMeanPinky", 1)
 		stop
-		
-		ReplaceVanilla:
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx ("Vanilla_DemonX",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION |SXF_TRANSFERSPECIAL| SXF_TRANSFERAMBUSHFLAG ,0)
-		Stop
 	
 		Spawn:
-		TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
-		TNT1 A 0 ACS_NamedExecuteAlways("PinkyHealthFood", 0)
 		TNT1 A 0
 		SAR2 A 10 A_Look
 		Goto Spawn+3
@@ -688,7 +678,7 @@ Actor MeanDemon : Demon Replaces Demon
     Death.KillMe:
     Death.Taunt:
 	    TNT1 A 0 A_ChangeFlag("SOLID", 0)
-        TNT1 A 0 A_SpawnItem("Demon")
+        TNT1 A 0 A_SpawnItem("PB_Demon")
         Stop
 	Raise:
 		SAR2 NMLKJI 5
@@ -1003,19 +993,6 @@ Actor DeadMeanDemonHalf23: DeadDemon1
 		 TNT1 AAA 0 A_CustomMissile ("XDeath3", 5, 0, random (0, 360), 2, random (0, 160))
 		 TNT1 AAA 0 A_CustomMissile ("XDeath4", 5, 0, random (0, 360), 2, random (0, 160))
 		Stop}}	
-		
-Actor Vanilla_Demonx : MeanDemon
-{
-	DropItem "DemonStrengthRune" 4
-	States
-	{
-		Spawn:
-		TNT1 A 0 ACS_NamedExecuteAlways("PinkyHealthFood", 0)
-		TNT1 A 0
-		SAR2 A 10 A_Look
-		Goto Spawn+2
-	}
-}
 
 //For Compatability
 Actor Bloodfiend : MeanDemon

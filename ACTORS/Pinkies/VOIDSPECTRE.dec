@@ -61,7 +61,7 @@ ACTOR VoidSpectreBlurFX_NDEMD
   }
 }
 
-ACTOR PB_VoidSpectre: PB_Demon Replaces Spectre
+ACTOR VoidSpectre: PB_Demon Replaces Spectre 1540
 {
 	//$Title Void Spectre
 	//$Category Project Brutality - Monsters/Pinkies
@@ -74,8 +74,6 @@ ACTOR PB_VoidSpectre: PB_Demon Replaces Spectre
 	Radius 22
 	Mass 400
 	 Speed 15
-    FastSpeed 18 //yes, his fast speed is slower because it would make him sanic fast if it was default
-	SpawnID 1540
     damagefactor "Crush", 10.0
 	damagefactor "Avoid", 0.0
 	damagefactor "killme", 0.0
@@ -119,16 +117,8 @@ ACTOR PB_VoidSpectre: PB_Demon Replaces Spectre
 		TNT1 A 1 A_SpawnItemEx ("VoidSpectreShrinkFX7", 0, 0, 5, 0, 0)
 		TNT1 A 1 A_SpawnItemEx ("LilVoidSpectre", 1)
 		stop
-		
-	ReplaceVanilla:
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		TNT1 A 0 A_SpawnItemEx ("Vanilla_VoidSpectre",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION |SXF_TRANSFERSPECIAL| SXF_TRANSFERAMBUSHFLAG ,0)
-		Stop
 	
 	Spawn:
-		TNT1 A 0 ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
-		TNT1 A 0 ACS_NamedExecuteAlways("PinkyHealthFood", 0)
 		TNT1 A 0 A_JumpIfInventory("EatMe", 1, "Eat")
 		TNT1 A 0
 		NDEM A 10 A_Look
@@ -712,7 +702,7 @@ ACTOR PB_VoidSpectre: PB_Demon Replaces Spectre
     Death.KillMe:
     Death.Taunt:
 	    TNT1 A 0 A_ChangeFlag("SOLID", 0)
-        TNT1 A 0 A_SpawnItem("PB_VoidSpectre")
+        TNT1 A 0 A_SpawnItem("VoidSpectre")
         Stop
 
 
@@ -771,7 +761,7 @@ Actor DeadVoidSpectre: CurbstompedMarine
 	Raise:
 		NDEM N 5
 		NDEM MLKJI 5
-        TNT1 A 0 A_SpawnItem ("PB_VoidSpectre", 3)
+        TNT1 A 0 A_SpawnItem ("VoidSpectre", 3)
 		Stop
     Death:
   	    TNT1 A 0 A_FaceTarget
@@ -793,9 +783,9 @@ Actor DeadVoidSpectre: CurbstompedMarine
         Stop
 	
 	Death.Desintegrate:
-			TNT1 AAAA 0 A_SpawnProjectile ("Green_Blood", 0, 0, random (0, 360), CMF_AIMDIRECTION|CMF_ABSOLUTEPITCH|CMF_OFFSETPITCH|CMF_BADPITCH|CMF_SAVEPITCH, random (0, 90))
-			TNT1 AAAAAAAAAAAA 0 A_SpawnProjectile ("XDeath1Green", 5, 0, random (0, 360), CMF_AIMDIRECTION|CMF_ABSOLUTEPITCH|CMF_OFFSETPITCH|CMF_BADPITCH|CMF_SAVEPITCH, random (0, 160))
-			TNT1 AA 0 A_SpawnProjectile ("GreenBloodMistBig", 7, 0, random (0, 360), CMF_AIMDIRECTION|CMF_ABSOLUTEPITCH|CMF_OFFSETPITCH|CMF_BADPITCH|CMF_SAVEPITCH, random (30, 60))
+			TNT1 AAAA 0 A_CustomMissile ("Green_Blood", 0, 0, random (0, 360), CMF_AIMDIRECTION|CMF_ABSOLUTEPITCH|CMF_OFFSETPITCH|CMF_SAVEPITCH, random (0, 90))
+			TNT1 AAAAAAAAAAAA 0 A_CustomMissile ("XDeath1Green", 5, 0, random (0, 360), CMF_AIMDIRECTION|CMF_ABSOLUTEPITCH|CMF_OFFSETPITCH|CMF_SAVEPITCH, random (0, 160))
+			TNT1 AA 0 A_CustomMissile ("GreenBloodMistBig", 7, 0, random (0, 360), CMF_AIMDIRECTION|CMF_ABSOLUTEPITCH|CMF_OFFSETPITCH|CMF_SAVEPITCH, random (30, 60))
 			Stop
 			
 	}
@@ -978,7 +968,7 @@ Actor DeadVoidSpectre_ND4MD : DeadVoidSpectre_ND3ME
 	}
 }
 
-ACTOR VoidSpectreLostHisArm: PB_VoidSpectre
+ACTOR VoidSpectreLostHisArm: VoidSpectre
 {
 	Health 50
 	+NOPAIN
@@ -1031,20 +1021,4 @@ ACTOR VoidSpectreLostHisArm: PB_VoidSpectre
 		TNT1 A 0 A_SpawnItem ("GreenGrowingBloodPool")
 		Stop
 }
-}
-
-///////////////////////////======VANILLA======//////////////////////////////////
-
-Actor Vanilla_VoidSpectre : VoidSpectre
-{
-	DropItem "DemonStrengthRune" 2
-	States
-	{
-		Spawn:
-		TNT1 A 0 ACS_NamedExecuteAlways("PinkyHealthFood", 0)
-		TNT1 A 0 A_JumpIfInventory("EatMe", 1, "Eat")
-		TNT1 A 0
-		NDEM A 10 A_Look
-		Goto Spawn+3
-	}
 }
