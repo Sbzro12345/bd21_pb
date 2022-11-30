@@ -1022,7 +1022,7 @@ ACTOR DemonAttack: BaronBall
 	Projectile 
     Speed 15
 	+RANDOMIZE
-    Damage 3
+    Damage (random(3,3))
     +RIPPER
 	+FORCEXYBILLBOARD
 	+THRUGHOST
