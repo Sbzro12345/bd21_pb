@@ -102,15 +102,14 @@ ACTOR MonsterTargetCheckFaster: FastProjectile
 	}
 }
 
-ACTOR Imp: Monster Replaces DoomImp
+ACTOR PB_Imp : DoomImp Replaces DoomImp 1400
 //ACTOR Imp Replaces DoomImp
 {
-	//$Title Imp
+	Tag "Imp"
 	//$Category Project Brutality - Monsters/Imps
 	//$Sprite TROSA1
 	Game Doom
     Scale 1.04
-	SpawnID 1400
 	Health 75
 	Radius 18
 	Height 48
@@ -150,7 +149,8 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 	damagefactor "explosiveimpact", 2.0
 	MaxStepHeight 24
 	MaxDropOffHeight 32
-	Species Imp
+	Species "Imp"
+	+DONTHARMSPECIES
 	+DONTHURTSPECIES
 	+SLIDESONWALLS
 	PainChance "Trample", 255
@@ -203,8 +203,6 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 	
 	Spawn:
 		TROO A 1
-		TNT1 A 0 //ACS_ExecuteAlways(796, 0, 0, 0, 0)//Check if Vanilla Mode is activated
-		TROO A 0 //ACS_NamedExecuteAlways("CeilingClimbingImps", 0)//Check for CVARs
 		TNT1 A 0 A_GiveInventory("SKImp", 1)
 		TNT1 A 0 A_JumpIf(waterlevel == 2, "Swim")
 		TNT1 A 0 A_JumpIf(waterlevel == 3, "Swim")
@@ -567,7 +565,6 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
 		TNT1 A 0 A_SpawnItem("HeadshotTarget4", 16, 48,0)
 		TNT1 A 0 A_SpawnItem ("LegTargetBase", 10)
 		TROO DD 2 A_Chase
-		TNT1 A 0 A_JumpIf(GetCvar("pb_GroundImps")==1, "SeeContinue")
 		TNT1 A 0 A_Jump(240, 3)
 		TNT1 A 0 A_JumpIfCloser(800, "CeilingJump")
 		TNT1 AAAAA 0 
@@ -808,11 +805,8 @@ damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood
         TNT1 A 0 A_SpawnItem ("HeadshotTarget30", 0, 45,0)
 		
 		TNT1 AAA 0 A_SpawnItemEx ("RedLightning_Small", random (-12, 12), random (-12, 12), random (16, 52), 0, 0)
-		TROO H 1 
-		{
-			A_FaceTarget;
-			A_GiveToTarget("HealthBonus",4);
-		}
+		TROO H 1 A_FaceTarget
+		TROO H 1 A_GiveToTarget("HealthBonus",4)
 		TROO H 5 A_FaceTarget 
 		TNT1 A 0 A_Pain
 		Goto See
@@ -2108,8 +2102,7 @@ ACTOR FireBall_ //Replaces DoomImpBall
 	Spawn:
 	    TNT1 A 0
 	    TNT1 A 0 A_JumpIf(waterlevel > 1, "SpawnUnderwater")
-		TNT1 A 0 //A_JumpIf(ACS_NamedExecuteWithResult("PerformanceMode")==1,"SpawnCheap")
-		TNT1 A 0 //ACS_ExecuteAlways(798, 0, 0, 0, 0)//Check Effects
+		
 	Spawn1:
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode", 1, "SpawnCheap")
 		TNT1 A 0 A_Playsound("SMLFRBL", 1, 1, 1)
@@ -3156,128 +3149,96 @@ States{Spawn:
 		TNT1 A 0 A_Recoil(15)
 		
 		TNT1 A 0 A_Jump(96, "Suffer")
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
 		TNT1 A 0 A_Jump(64, "JustHangThere")
 		
 		
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
 		TNT1 A 0 A_Jump(64, "JustHangThere")
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
 		TNT1 A 0 A_Jump(64, "JustHangThere")
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
 		TNT1 A 0 A_Jump(64, "JustHangThere")
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX+0.003,ScaleY+0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
-		PIN6 E 4 {
-			A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40));
-			A_SetScale(ScaleX-0.003,ScaleY-0.005);
-			A_Recoil(10);
-		}
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
+		
+		PIN6 E 4 A_CustomMissile ("PB_BloodMist", 24, random(-2,2), random (0, 360), 2, random (0, 40))
+		PIN6 E 4 A_SetScale(ScaleX+0.003,ScaleY+0.005)
+		PIN6 E 4 A_Recoil(10)
 		
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
 		
@@ -3285,7 +3246,7 @@ States{Spawn:
 		
 		
 		
-		TNT1 A 0 A_StartSound("imp/death", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("imp/death", CHAN_AUTO)
 		TNT1 A 0 A_SetScale(1.0,1.0)
 		TNT1 A 0 A_Jump(36, "SlideDown")
 	JustHangThere:
@@ -3300,30 +3261,23 @@ States{Spawn:
         Loop
 		
 	Suffer:
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
-		PIN6 ABCDCBABCDCB 4 {
-			A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40));
-			A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40));
-		}
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
+
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40))
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
-		PIN6 ABCDCBABCDCB 4 {
-			A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40));
-			A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40));
-		}
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40))
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
-		PIN6 ABCDCBABCDCB 4 {
-			A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40));
-			A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40));
-		}
-		TNT1 A 0 A_StartSound("imp/pain", CHAN_AUTO)
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40))
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("imp/pain", CHAN_AUTO)
 		TNT1 A 0 A_JumpIf(velx != 0 || vely != 0, "LayDown")
-		PIN6 ABCDCBABCDCB 4 {
-			A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40));
-			A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40));
-		}
-		TNT1 A 0 A_StartSound("imp/death", CHAN_AUTO)
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_BloodMistSmall", 25, 0, random (0, 360), 2, random (10, 40))
+		PIN6 ABCDCBABCDCB 4 A_CustomMissile ("PB_SquirtingBloodTrail", 28, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("imp/death", CHAN_AUTO)
 		Goto JustHangThere
 	
 	SlideDown:
@@ -3438,38 +3392,14 @@ Actor PinnedImpTorso_Hanging: ZombiemanTorso
 			TNT1 A 0 A_FaceMaster
 		Hang:
 			TNT1 A 0 A_Recoil(-6)
-			PIN6 GGGGG 2 {
-				A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90));
-				return state("");
-			}
-			PIN6 GGGGG 2 {
-				A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90));
-				if(velX != 0 || velY != 0) {return state("HitTheFloor");}
-				return state("");
-			}
+			PIN6 GGGGG 2 A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90))
+			PIN6 GGGGG 2 A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90))
 			TNT1 A 0 A_Recoil(-6)
-			PIN6 GGGGG 2 {
-				A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90));
-				//if(momx < 0 || momx > 0 || momy < 0 || momy > 0) {return state("HitTheFloor");}
-				return state("");
-			}
-			PIN6 GGGGG 2 {
-				A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90));
-				if(velX != 0 || velY != 0) {return state("HitTheFloor");}
-				return state("");
-			}
+			PIN6 GGGGG 2 A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90))
+			PIN6 GGGGG 2 A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90))
 			TNT1 A 0 A_Recoil(-6)
-			PIN6 GGGGG 2 {
-				A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90));
-				//if(momx < 0 || momx > 0 || momy < 0 || momy > 0) {return state("HitTheFloor");}
-				return state("");
-			}
+			PIN6 GGGGG 2 A_CustomMissile ("PB_SquirtingBloodTrail", 12, 0, random (0, 360), 2, random (0, 90))
 		Dead:
-			PIN6 G 4 {
-				A_CheckFloor("HitTheFloor");
-				if(velX != 0 || velY != 0) {return state("HitTheFloor");}
-				return state("");
-			}
 			TNT1 A 0 A_Recoil(-6)
 			PIN6 G 8
 			Loop
@@ -3497,7 +3427,7 @@ Actor PinnedImpTorso_Hanging: ZombiemanTorso
 
 ///////////////////////////======VANILLA======//////////////////////////////////
 
-Actor Vanilla_Imp : Imp
+Actor Vanilla_Imp : PB_Imp
 {
 	States
 	{
@@ -3542,31 +3472,23 @@ Actor PB_DoomImpBall Replaces DoomImpBall
 	States
 	{
 		Spawn:
-			DB25 A 1 BRIGHT {
-				A_Startsound("SMLFRBL", CHAN_BODY , CHANF_LOOP, 1);
-			}
+			DB25 A 1 BRIGHT A_PlaySound("SMLFRBL", CHAN_BODY , 1)
 		Fly:
-			DB25 BCDEFGHIJKLMNOPA 1 BRIGHT {
-				A_SpawnProjectile("OldschoolRocketSmokeTrail2", 2, 0, random (160, 210), 2, random (-30, 30));
-			}
+			DB25 BCDEFGHIJKLMNOPA 1 BRIGHT A_CustomMissile("OldschoolRocketSmokeTrail2", 2, 0, random (160, 210), 2, random (-30, 30))
 			Loop
 			
 		Death:
-			TNT1 A 0 {
-				A_StopSound(CHAN_BODY );
-				A_Startsound("ImpFireImpact", CHAN_AUTO);
-				A_SpawnItemEx ("DetectFloorCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0);
-				A_SpawnItemEx ("DetectCeilCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0);
-			}
-			EXPL AAAA 0 A_SpawnProjectile ("FireBallExplosionFlames", 1, 0, random (0, 360), 2, random (0, 360))
-			TNT1 AAAAA 0 A_SpawnProjectile ("ExplosionParticleHeavy", 0, 0, random (0, 180), 2, random (0, 180))
-			DB54 ABCDEFGHIJKLMNOPQR 1 BRIGHT A_SpawnProjectile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160))
+			TNT1 A 0 A_StopSound(CHAN_BODY )
+			TNT1 A 0 A_PlaySound("ImpFireImpact", CHAN_AUTO)
+			TNT1 A 0 A_SpawnItemEx ("DetectFloorCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			TNT1 A 0 A_SpawnItemEx ("DetectCeilCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+			EXPL AAAA 0 A_CustomMissile ("FireBallExplosionFlames", 1, 0, random (0, 360), 2, random (0, 360))
+			TNT1 AAAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 180), 2, random (0, 180))
+			DB54 ABCDEFGHIJKLMNOPQR 1 BRIGHT A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 160))
 			Stop
 		XDeath:
-			TNT1 A 0 {
-				A_StopSound(CHAN_BODY );
-				A_Startsound("ImpFireImpact", CHAN_AUTO);
-			}
+			TNT1 A 0 A_StopSound(CHAN_BODY )
+			TNT1 A 0 A_PlaySound("ImpFireImpact", CHAN_AUTO)
 			EXPL AAAAAA 0 A_CustomMissile ("FireBallExplosionFlames", 1, 0, random (0, 360), 2, random (0, 360))
 			EXPL AAA 0 A_CustomMissile ("PlasmaSmoke", 1, 0, random (0, 360), 2, random (0, 360))
 			DB54 DEFGHIJKLMNOPQR 1 BRIGHT
@@ -3584,18 +3506,14 @@ Actor PB_DoomImpBallGravity : PB_DoomImpBall
 		
 		Spawn:
 			DB25 AA 1 BRIGHT 
-			TNT1 A 0 {
-				A_Startsound("SMLFRBL", CHAN_BODY, CHANF_LOOP, 1);
-				A_Startsound("dimp/missile", CHAN_AUTO);
-				A_ChangeFlag("SOLID", 1);
-			}
+			TNT1 A 0 A_PlaySound("SMLFRBL", CHAN_BODY, 1)
+			TNT1 A 0 A_PlaySound("dimp/missile", CHAN_AUTO)
+			TNT1 A 0 A_ChangeFlag("SOLID", 1)
 		Fly:
-			DB25 BCDEFGHIJKLMNOPA 1 BRIGHT {
-				A_SpawnProjectile("OldschoolRocketSmokeTrail2", 2, 0, random (160, 210), 2, random (-30, 30));
-				A_SpawnItem("OrangeFlare",0);
-				A_SpawnProjectile ("ExplosionParticleVeryFast", 2, 0, random (160, 210), 2, random (-45, 45));
-				ThrustThingZ(0,-2,0,1);
-			}
+			DB25 BCDEFGHIJKLMNOPA 1 BRIGHT A_CustomMissile("OldschoolRocketSmokeTrail2", 2, 0, random (160, 210), 2, random (-30, 30))
+			DB25 BCDEFGHIJKLMNOPA 1 BRIGHT A_SpawnItem("OrangeFlare",0)
+			DB25 BCDEFGHIJKLMNOPA 1 BRIGHT A_CustomMissile ("ExplosionParticleVeryFast", 2, 0, random (160, 210), 2, random (-45, 45))
+			DB25 BCDEFGHIJKLMNOPA 1 BRIGHT ThrustThingZ(0,-2,0,1)
 			Loop
 	}
 }

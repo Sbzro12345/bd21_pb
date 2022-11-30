@@ -440,7 +440,7 @@ ACTOR BrutalizedImp1 : SwitchableDecoration
         Stop
 }}
 
-actor BrutalizedImpStop: PB_CurbstompedMarine
+actor BrutalizedImpStop: CurbstompedMarine
 {
     damagefactor "Blood", 0.0
     damagefactor "Trample", 0.0
@@ -587,7 +587,7 @@ IZD3 C -1
 		 Stop}}
 	   
 		
-ACTOR ThisImpGotDestroyed: PB_CurbstompedMarine
+ACTOR ThisImpGotDestroyed: CurbstompedMarine
 {Health 200 
 DamageFactor "ExplosiveImpact", 10.0
 States{Spawn:
@@ -602,7 +602,7 @@ States{Spawn:
 		Stop
 		}}
 
-ACTOR ThisImpGotDestroyed2: PB_CurbstompedMarine
+ACTOR ThisImpGotDestroyed2: CurbstompedMarine
 {Health 200 
 DamageFactor "ExplosiveImpact", 10.0
 States{Spawn:
@@ -1339,7 +1339,7 @@ Height 48
 }
 
 
-ACTOR SavageImpDyingOfBloodLoss: PB_InfectedImp
+ACTOR SavageImpDyingOfBloodLoss: StoneImp
 {
 	Radius 16
 	Height 28

@@ -1,10 +1,20 @@
+//Imps
+#include "ACTORS/Imps/Imps.dec"
+#include "ACTORS/Imps/MeanImp.dec"
+#include "ACTORS/Imps/ViciousImp.dec"
+#include "ACTORS/Imps/SavageImp.dec"
+#include "ACTORS/Imps/StoneImp.dec"
+#include "ACTORS/Imps/DarkImp.txt"
+#include "ACTORS/Imps/NamiDarkImp.txt"
+#include "ACTORS/Imps/NetherDarkImp.txt"
+#include "ACTORS/Imps/VoidDarkImp.txt"
+
 //Pinky Demons
 #include "ACTORS/Pinkies/Demon.dec"
 #include "ACTORS/Pinkies/MeanDemon.dec"
 #include "ACTORS/Pinkies/MechDemon.dec"
 #include "ACTORS/Pinkies/Spectre.dec"
 #include "ACTORS/Pinkies/VoidSpectre.dec"
-#include "ACTORS/Pinkies/DyingDemon.dec"
 
 //Spidermastermind
 #include "ACTORS/Bosses/Mastermind.dec"
@@ -26,9 +36,7 @@
 #include "ACTORS/Nobles/CyberPaladin.txt"
 
 //Barons
-#include "ACTORS/Nobles/DyingBaron.dec"
 #include "ACTORS/Nobles/Baron.dec"
-#include "ACTORS/Nobles/DyingBruiser.dec"
 #include "ACTORS/Nobles/Infernus.dec"
 #include "ACTORS/Nobles/Belphegor.dec"
 #include "ACTORS/Nobles/CyberBaron.dec"
@@ -58,9 +66,11 @@
 #include "ACTORS/Floaters/TriteElemental.txt"
 #include "ACTORS/Floaters/Watcher.txt"
 
-//#include "ACTORS/realm667monsters.dec"
-//#include "ACTORS/StealthMonsters.dec"
-//#include "ACTORS/UnderwaterMonsters.dec"
+//Dying Monsters
+#include "ACTORS/Imps/DyingImps.dec"
+#include "ACTORS/Pinkies/DyingDemon.dec"
+#include "ACTORS/Nobles/DyingBruiser.dec"
+#include "ACTORS/Nobles/DyingBaron.dec"
 
 //Random Monster Spawner for runs
 #include "MonsterSpawner.txt"
