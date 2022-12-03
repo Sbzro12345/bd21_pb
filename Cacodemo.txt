@@ -39,7 +39,7 @@ ACTOR Cacodemon_ : Cacodemon Replaces Cacodemon
 	BurnHeight 0
 	damagefactor "Blood", 0.0 damagefactor "BlueBlood", 0.0 damagefactor "GreenBlood", 0.0
 	Tag "Cacodemon"
-	Species "Cacodemon"
+	Species "FlyingBalls"
 	States
 	{
 	
