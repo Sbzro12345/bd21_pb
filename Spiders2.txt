@@ -48,6 +48,87 @@ Pain.Melee:
 			ARAC I 3
 		ARAC I 3 A_Pain
 		goto See
+		
+
+		Pain.Stealth:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+
+		Pain.Cut:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.Saw:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.IsDown:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.KillMe:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.Taunt:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+	
+		Pain.Head:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.Shrapnel:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.ExplosiveImpact:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.Explosive:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.ExtremePunches:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.Slide:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.Kick:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.HeavyImpact:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+		
+		Pain.Stomp:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+
+		PainHurt:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
 
 		
 	Death:
