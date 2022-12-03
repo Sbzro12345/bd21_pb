@@ -44,6 +44,11 @@ ACTOR Arachnotron2: Arachnotron1
 		ARAC I 3
 		ARAC I 3 A_Pain
 		Goto See+1
+Pain.Melee:
+			ARAC I 3
+		ARAC I 3 A_Pain
+		goto See
+
 		
 	Death:
 		TNT1 A 0 A_Jump(101, "RareDeath")
